@@ -1,0 +1,9 @@
+C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\DAL\bin\Debug\netstandard2.0\DAL.deps.json
+C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\DAL\bin\Debug\netstandard2.0\DAL.dll
+C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\DAL\bin\Debug\netstandard2.0\DAL.pdb
+C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\DAL\obj\Debug\netstandard2.0\DAL.csprojAssemblyReference.cache
+C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfoInputs.cache
+C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\DAL\obj\Debug\netstandard2.0\DAL.AssemblyInfo.cs
+C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\DAL\obj\Debug\netstandard2.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\DAL\obj\Debug\netstandard2.0\DAL.dll
+C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\DAL\obj\Debug\netstandard2.0\DAL.pdb
