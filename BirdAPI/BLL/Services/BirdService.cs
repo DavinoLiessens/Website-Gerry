@@ -43,9 +43,8 @@ namespace BLL.Services
                 bird.Kotnummer = body.Kotnummer;
             //if (body.Soort != null)
             //    bird.Soort = body.Soort;
-            //if (body.OwnerFullName != null)
-            //    bird.Eigenaar.Voornaam = body.OwnerFullName.Substring(0, body.OwnerFullName.IndexOf(" "));
-            //    bird.Eigenaar.Achternaam = body.OwnerFullName.Substring(body.OwnerFullName.IndexOf(" "), body.OwnerFullName.Length);
+            if (body.OwnerFullName != null)
+                bird.Eigenaar.Voornaam = body.OwnerFullName.Substring(0, body.OwnerFullName.IndexOf(" "));
 
             bird = await _repo.ChangeBird(bird);
             BirdVM viewmodel = _mapper.Map<BirdVM>(bird);
@@ -57,13 +56,9 @@ namespace BLL.Services
         {
             Bird bird = _mapper.Map<Bird>(body);
             bird = await _repo.CreateBird(bird);
-
-            //CreateBirdVM viewmodel = new CreateBirdVM();
-            //viewmodel.owner.Voornaam = bird.Eigenaar.Voornaam;
-            //viewmodel.owner.Achternaam = bird.Eigenaar.Achternaam;
-
-            //return _mapper.Map<BirdVM>(viewmodel);
-            return _mapper.Map<BirdVM>(bird);
+            BirdVM vm = _mapper.Map<BirdVM>(bird);
+            vm.OwnerFullName = $"{bird.Eigenaar.Voornaam} {bird.Eigenaar.Achternaam}";
+            return vm;
         }
 
         public async Task<BirdVM> DeleteBird(int id)
