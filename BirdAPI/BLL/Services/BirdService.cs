@@ -34,9 +34,9 @@ namespace BLL.Services
             Bird bird = await _repo.GetBird(id);
 
             if (body.Ringnummer != null)
-                bird.Ringnummer = body.Ringnummer;
+                bird.Ringnummer = body.Ringnummer.Value;
             if (body.Kotnummer != null)
-                bird.Kotnummer = body.Kotnummer;
+                bird.Kotnummer = body.Kotnummer.Value;
             {
                 //if (body.Geslacht != null)
                 //    bird.Geslacht = body.Geslacht;
@@ -45,11 +45,12 @@ namespace BLL.Services
                 //if (body.Soort != null)
                 //    bird.Soort = body.Soort;
             }
-            if (body.OwnerFullName != null)
+            if (body.EigenaarID != null)
             {
-                string[] names = body.OwnerFullName.Split(' '); // ********** Wat als de achternaam meerdere delen heeft??? *****
-                bird.Eigenaar.Voornaam = names[0];
-                bird.Eigenaar.Achternaam = names[1];
+                bird.EigenaarID = body.EigenaarID.Value;
+                //string[] names = body.OwnerFullName.Split(' '); // ********** Wat als de achternaam meerdere delen heeft??? *****
+                //bird.Eigenaar.Voornaam = names[0];
+                //bird.Eigenaar.Achternaam = names[1];
             }
 
             bird = await _repo.ChangeBird(bird);
