@@ -2,11 +2,13 @@
     <div class="p-toolbar-group-left">
         <!-- <p-button label="" icon="pi pi-plus"></p-button> -->            
         <i class="pi pi-bars"></i>        
-        <p-splitButton label="Vogels" [model]="birdItems"></p-splitButton>
-        <p-splitButton label="Eigenaars" [model]="ownerItems"></p-splitButton>
+        <p-splitButton label="Vogels" [model]="birdItems"  ></p-splitButton>
+        <p-splitButton label="Eigenaars" [model]="ownerItems" ></p-splitButton>
     </div>
     
     <div class="p-toolbar-group-right">
-        <p-button label="Uitloggen" icon="pi sign-out"></p-button>
+        <p-button label="Uitloggen" icon="pi pi-sign-out"></p-button>
     </div>
 </p-toolbar>
+
+<router-outlet></router-outlet>

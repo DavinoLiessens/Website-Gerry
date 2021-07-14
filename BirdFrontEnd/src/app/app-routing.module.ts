@@ -12,16 +12,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const routes: Routes = [
   // BIRD
-  {path: "birds", component: BirdComponent},
-  {path: "birds/:id", component: BirdDetailComponent},
+  {path: "birds", component: BirdComponent},  
   {path: "birds/create", component: BirdCreateComponent},
   {path: "birds/update/:id", component: BirdUpdateComponent},
+  {path: "birds/:id", component: BirdDetailComponent},
 
   // OWNER
   {path: "owners", component: OwnerComponent},
-  {path: "owners/:id", component: OwnerDetailComponent},
   {path: "owners/create", component: OwnerCreateComponent},
   {path: "owners/update/:id", component: OwnerUpdateComponent},
+  {path: "owners/:id", component: OwnerDetailComponent},
 
   // PAGE NOT FOUND
   {path: "*", component: PageNotFoundComponent},
