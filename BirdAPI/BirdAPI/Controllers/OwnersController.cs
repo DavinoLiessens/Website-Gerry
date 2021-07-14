@@ -25,10 +25,10 @@ namespace BirdAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllOwners()
+        public async Task<IActionResult> GetAllOwners(string name)
         {
-            List<OwnerVM> vm = await _ownerService.GetAllOwners();
-            return Ok(vm);
+            List<OwnerVM> owners = await _ownerService.GetAllOwners(name);
+            return Ok(owners);
         }
 
         [HttpPost]

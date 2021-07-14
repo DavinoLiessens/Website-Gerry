@@ -14,6 +14,5 @@ namespace BLL.ViewModels
         public int? Jaartal { get; set; }
         public int? Kotnummer { get; set; }
         public string OwnerFullName { get; set; }
-        //public CreateOwnerVM Owner { get; set; }
     }
 }
