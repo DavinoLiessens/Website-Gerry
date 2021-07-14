@@ -1,7 +1,10 @@
+// *** MODULES ***
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
+
+// *** COMPONENTS ***
 import { AppComponent } from './app.component';
 import { BirdComponent } from './bird/bird.component';
 import { BirdDetailComponent } from './bird/bird-detail/bird-detail.component';
@@ -28,6 +31,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
   providers: [],
