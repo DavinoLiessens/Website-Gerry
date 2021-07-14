@@ -1,11 +1,14 @@
 // *** MODULES ***
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { SplitButtonModule } from 'primeng/splitbutton';
+import { TableModule } from 'primeng/table';
+import { VirtualScrollerModule } from 'primeng/virtualscroller';
 
 // *** COMPONENTS ***
 import { AppComponent } from './app.component';
@@ -35,10 +38,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     ToolbarModule,
     ButtonModule,
-    SplitButtonModule
+    SplitButtonModule,
+    TableModule,
+    VirtualScrollerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

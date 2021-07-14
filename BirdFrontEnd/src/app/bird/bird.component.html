@@ -1,1 +1,108 @@
-<p>bird works!</p>
+<div class="card">
+    <p-table #dt1 [value]="birds" dataKey="id"
+        [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" styleClass="p-datatable-customers p-datatable-gridlines"
+        [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+        [globalFilterFields]="['name','country.name','representative.name','status']">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+                <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+                <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+                </span>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        ID 
+                        <p-columnFilter type="text" field="id" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Eigenaar 
+                        <p-columnFilter field="owner" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">
+                            <ng-template pTemplate="header">
+                                <div class="p-px-3 p-pt-3 p-pb-0">
+                                    <span class="p-text-bold">Agent Picker</span>
+                                </div>
+                            </ng-template>
+                            <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                                <p-multiSelect [ngModel]="value" [options]="representatives" placeholder="Any" (onChange)="filter($event.value)" optionLabel="name">
+                                    <ng-template let-option pTemplate="item">
+                                        <div class="p-multiselect-representative-option">
+                                            <img [alt]="option.label" src="assets/showcase/images/demo/avatar/{{option.image}}" width="32" style="vertical-align: middle" />
+                                            <span class="p-ml-1">{{option.name}}</span>
+                                        </div>
+                                    </ng-template>
+                                </p-multiSelect>
+                            </ng-template>
+                        </p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Geslacht
+                        <p-columnFilter type="text" field="sex" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Ringnummer 
+                        <p-columnFilter type="text" field="ringnumber" display="menu"></p-columnFilter>
+                    </div>
+                </th>                
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Soort
+                        <p-columnFilter type="date" field="typeOfBird" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Jaartal
+                        <p-columnFilter type="numeric" field="age" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Kotnummer
+                        <p-columnFilter type="numeric" field="cagenumber" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-bird>
+            <tr>
+                <td>
+                    <p>1.</p>>
+                </td>
+                <td>
+                    <p>Davino Liessens</p>>
+                </td>
+                <td>
+                    <p>Pop</p>
+                </td>
+                <td>
+                    <p>2478952</p>
+                </td>
+                <td>
+                    <p>Papegaai</p>
+                </td>
+                <td>
+                    <p>2021</p>
+                </td>
+                <td>
+                    <p>5</p>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="7">No Birds found.</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
