@@ -11,6 +11,7 @@ import { OwnerComponent } from './owner/owner.component';
 import { OwnerDetailComponent } from './owner/owner-detail/owner-detail.component';
 import { OwnerCreateComponent } from './owner/owner-create/owner-create.component';
 import { OwnerUpdateComponent } from './owner/owner-update/owner-update.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { OwnerUpdateComponent } from './owner/owner-update/owner-update.componen
     OwnerComponent,
     OwnerDetailComponent,
     OwnerCreateComponent,
-    OwnerUpdateComponent
+    OwnerUpdateComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
