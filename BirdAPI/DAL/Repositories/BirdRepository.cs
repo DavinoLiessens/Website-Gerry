@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -28,18 +27,17 @@ namespace DAL.Repositories
 
         public async Task<Bird> ChangeBird(Bird bird)
         {
-            _context.Birds.Update(bird);
+            Bird newBird = await _context.Birds.FindAsync(bird.ID);
+            _context.Birds.Update(newBird);
             await _context.SaveChangesAsync();
-            Bird dbBird = await GetBirdWithOwner().SingleOrDefaultAsync(x => x.ID == bird.ID);
-            return dbBird;
+            return newBird;
         }
 
         public async Task<Bird> CreateBird(Bird bird)
         {
-            _context.Birds.Add(bird);
+            Bird newBird = _context.Birds.Add(bird).Entity;
             await _context.SaveChangesAsync();
-            Bird dbBird = await GetBirdWithOwner().SingleOrDefaultAsync(x => x.ID == bird.ID);
-            return dbBird;
+            return newBird;
         }
 
         public async Task<Bird> DeleteBird(int id)
@@ -52,17 +50,12 @@ namespace DAL.Repositories
 
         public async Task<List<Bird>> GetAllBirds()
         {
-            return await GetBirdWithOwner().ToListAsync();
+            return await _context.Birds.Include(x => x.Eigenaar).ToListAsync();
         }
 
         public async Task<Bird> GetBird(int id)
         {
-            return await GetBirdWithOwner().SingleOrDefaultAsync(x => x.ID == id);
+            return await _context.Birds.Include(x => x.Eigenaar).SingleOrDefaultAsync(x => x.ID == id);
         }
-
-        private IQueryable<Bird> GetBirdWithOwner()
-        {
-            return _context.Birds.Include(x => x.Eigenaar);
-        } 
     }
 }

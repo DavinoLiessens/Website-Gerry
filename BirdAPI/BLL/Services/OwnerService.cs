@@ -4,7 +4,6 @@ using DAL.DB_Models;
 using DAL.Repositories;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,8 +12,7 @@ namespace BLL.Services
     public interface IOwnerService
     {
         Task<OwnerVM> GetOwner(int id);
-        Task<List<OwnerVM>> GetAllOwners(string fullName);
-        //Task<List<OwnerVM>> GetAllOwners(GetAllOwnersFilterVM filter);
+        Task<List<OwnerVM>> GetAllOwners();
         Task<OwnerVM> CreateOwner(CreateOwnerVM body);
         Task<OwnerVM> DeleteOwner(int id);
         Task<OwnerVM> ChangeOwner(int id, ChangeOwnerVM body);
@@ -59,35 +57,12 @@ namespace BLL.Services
             return viewmodel;
         }
 
-        public async Task<List<OwnerVM>> GetAllOwners(string fullName)
+        public async Task<List<OwnerVM>> GetAllOwners()
         {
-            List<Owner> dbOwners = await _repo.GetAllOwners();
-
-            IQueryable<Owner> query = dbOwners.AsQueryable();
-
-            if (!string.IsNullOrWhiteSpace(fullName))
-            {
-                query = query.Where(x => (x.Voornaam.ToLower() + " " + x.Achternaam.ToLower()).Contains(fullName.ToLower()));
-            }
-
-            List<OwnerVM> viewmodel = _mapper.Map<List<OwnerVM>>(query.ToList());
+            List<Owner> owner = await _repo.GetAllOwners();
+            List<OwnerVM> viewmodel = _mapper.Map<List<OwnerVM>>(owner);
             return viewmodel;
         }
-
-        //public async Task<List<OwnerVM>> GetAllOwners(GetAllOwnersFilterVM filter)
-        //{
-        //    List<Owner> dbOwners = await _repo.GetAllOwners();
-
-        //    IQueryable<Owner> query = dbOwners.AsQueryable();
-
-        //    if (!.IsNullOrWhiteSpace(filter.FullName))
-        //    {
-        //        query = query.Where(x => (x.Voornaam.ToLower() + " " + x.Achternaam.ToLower()).Contains(filter.FullName.ToLower()));
-        //    }
-
-        //    List<OwnerVM> viewmodel = _mapper.Map<List<OwnerVM>>(query.ToList());
-        //    return viewmodel;
-        //}
 
         public async Task<OwnerVM> GetOwner(int id)
         {
