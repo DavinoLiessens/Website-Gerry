@@ -9,6 +9,7 @@ import { ButtonModule } from 'primeng/button';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { TableModule } from 'primeng/table';
 import { VirtualScrollerModule } from 'primeng/virtualscroller';
+import { FormsModule } from '@angular/forms';
 
 // *** COMPONENTS ***
 import { AppComponent } from './app.component';
@@ -44,7 +45,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ButtonModule,
     SplitButtonModule,
     TableModule,
-    VirtualScrollerModule
+    VirtualScrollerModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,11 @@
-<p>bird-create works!</p>
+<div class="item">
+    <p>Ringnummer: </p><input type="text" placeholder="Ringnummer..." [(ngModel)]="Ringnummer" />
+    <p>Geslacht: </p><input type="number" placeholder="Geslacht..." [(ngModel)]="Geslacht" />
+    <p>Soort: </p><input type="text" placeholder="Categorie..." [(ngModel)]="Soort" />
+    <p>Jaartal: </p><input type="text" placeholder="Jaartal..." [(ngModel)]="Jaartal" />
+    <p>Kotnummer: </p><input type="text" placeholder="Kotnummer..." [(ngModel)]="Kotnummer" />
+    <p>Eigenaar: </p><input type="text" placeholder="Eigenaar..." [(ngModel)]="EigenaarID" />
+    <button pButton type="button" label="Opslaan" icon="pi pi-check" (click)="CreateBird()"></button>
+</div>
+
+<!-- Dropdown maken voor Geslacht, Soort en Eigenaar -->
