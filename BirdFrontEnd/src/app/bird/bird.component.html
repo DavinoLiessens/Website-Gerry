@@ -1,6 +1,6 @@
 <div class="card">
     <p-table #dt1 [value]="birds" dataKey="id"
-        [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading" styleClass="p-datatable-customers p-datatable-gridlines"
+        [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" styleClass="p-datatable-customers p-datatable-gridlines"
         [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
         [globalFilterFields]="['name','country.name','representative.name','status']">
         <ng-template pTemplate="caption">
@@ -8,8 +8,21 @@
                 <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
                 <span class="p-input-icon-left p-ml-auto">
                     <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search keyword" />
+                    <input pInputText type="text" [(ngModel)]="SearchName" placeholder="Zoek Eigenaar" />   
                 </span>
+            </div>
+            <div class="select">
+                <label>Aantal producten: </label>
+                <select class="paging" [(ngModel)]="NoProducts">
+                    <option *ngFor="let item of items"  value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+    
+            <div class="select">
+                <label>Sorteer op: </label>
+                <select class="sorting" [(ngModel)]="SortItems">
+                    <option *ngFor="let item of sortItems"  value="{{item}}">{{item}}</option>
+                </select>
             </div>
         </ng-template>
         <ng-template pTemplate="header">
@@ -77,25 +90,25 @@
         <ng-template pTemplate="body" let-bird>
             <tr>
                 <td>
-                    <p>1.</p>>
+                    <p>{{bird.id}}</p>
                 </td>
                 <td>
-                    <p>Davino Liessens</p>>
+                    <p>{{bird.ownerFullName}}</p>
                 </td>
                 <td>
-                    <p>Pop</p>
+                    <p>{{bird.geslacht}}</p>
                 </td>
                 <td>
-                    <p>2478952</p>
+                    <p>{{bird.ringnummer}}</p>
                 </td>
                 <td>
-                    <p>Papegaai</p>
+                    <p>{{bird.soort}}</p>
                 </td>
                 <td>
-                    <p>2021</p>
+                    <p>{{bird.jaartal}}</p>
                 </td>
                 <td>
-                    <p>5</p>
+                    <p>{{bird.kotnummer}}</p>
                 </td>
             </tr>
         </ng-template>
