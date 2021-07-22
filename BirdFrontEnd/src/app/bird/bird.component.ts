@@ -40,21 +40,23 @@ export class BirdComponent implements OnInit {
       }
     }
 
+    SearchOwner(){
+      this.apiService.GetAllBirds(this.SearchName).subscribe(result => {
+        this.birds = [];
+        this.birds = result;
+        console.log(this.birds);
+      },
+      error => {
+        console.log(error);
+      })
+    }
+
     get SearchName() {
       return this.birdService.SearchName;
     }
   
     set SearchName(value: string){
       this.birdService.SearchName = value;
-      this.apiService.GetAllBirds(value).subscribe(result => {
-        this.birds = result;
-      },
-      error => {
-        console.log(error);
-        this.apiService.GetAllBirds().subscribe(result => {
-          this.birds = result;
-        });
-      })
     }
 
     get NoBirds() {
@@ -68,9 +70,6 @@ export class BirdComponent implements OnInit {
       },
       error => {
         console.log(error);
-        this.apiService.GetAllBirds().subscribe(result => {
-          this.birds   = result;
-        });
       })
     }
 }
