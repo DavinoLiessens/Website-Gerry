@@ -25,8 +25,8 @@ export class ApiService {
     return this._http.get<Bird>(`http://localhost:4000/api/v1/birds/${id}`);
   }
 
-  CreateBird(newBird: Bird) {
-    return this._http.post<Bird>(`http://localhost:4000/api/v1/birds`, newBird, {
+  CreateBird(newBird: CreateBird) {
+    return this._http.post<CreateBird>(`http://localhost:4000/api/v1/birds`, newBird, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json'
       })
@@ -34,7 +34,7 @@ export class ApiService {
   }
 
   UpdateBird(updateBird: Bird) {
-    return this._http.put<Bird>(`http://localhost:4000/api/v1/birds`, updateBird);
+    return this._http.patch<Bird>(`http://localhost:4000/api/v1/birds`, updateBird);
   }
 
   DeleteBird(id: number) {
@@ -86,4 +86,13 @@ export interface Owner{
   ID?: number;
   voornaam: string;
   achternaam: string;
+}
+
+export interface CreateBird{
+  ringnummer: number;
+  geslacht: string;
+  soort: string;
+  jaartal: number;
+  kotnummer: number;
+  eigenaarID: number;
 }

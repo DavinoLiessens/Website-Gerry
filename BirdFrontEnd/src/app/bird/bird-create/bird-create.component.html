@@ -1,11 +1,20 @@
 <div class="item">
     <p>Ringnummer: </p><input type="text" placeholder="Ringnummer..." [(ngModel)]="Ringnummer" />
-    <p>Geslacht: </p><input type="number" placeholder="Geslacht..." [(ngModel)]="Geslacht" />
-    <p>Soort: </p><input type="text" placeholder="Categorie..." [(ngModel)]="Soort" />
+    <p>Geslacht: </p>
+    <select [(ngModel)]="Geslacht">
+        <option *ngFor="let item of GeslachtOptions">{{item}}</option>
+    </select>
+    <p>Soort: </p>
+    <select [(ngModel)]="Soort">
+        <option *ngFor="let item of typeOfBirdOptions">{{item}}</option>
+    </select>
     <p>Jaartal: </p><input type="text" placeholder="Jaartal..." [(ngModel)]="Jaartal" />
     <p>Kotnummer: </p><input type="text" placeholder="Kotnummer..." [(ngModel)]="Kotnummer" />
-    <p>Eigenaar: </p><input type="text" placeholder="Eigenaar..." [(ngModel)]="EigenaarID" />
+    <p>Eigenaar: </p>
+    <select [(ngModel)]="EigenaarID">
+        <option  *ngFor="let item of ownerOptions" value="{{item.id}}">{{item.voornaam}} {{item.achternaam}}</option>
+    </select>
     <button pButton type="button" label="Opslaan" icon="pi pi-check" (click)="CreateBird()"></button>
 </div>
 
-<!-- Dropdown maken voor Geslacht, Soort en Eigenaar -->
+
