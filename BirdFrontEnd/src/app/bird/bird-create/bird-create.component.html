@@ -1,5 +1,5 @@
 <div class="item">
-    <p>Ringnummer: </p><input type="text" placeholder="Ringnummer..." [(ngModel)]="Ringnummer" />
+    <p>Ringnummer: </p><input type="number" placeholder="Ringnummer..." [(ngModel)]="Ringnummer" />
     <p>Geslacht: </p>
     <select [(ngModel)]="Geslacht">
         <option *ngFor="let item of GeslachtOptions">{{item}}</option>
@@ -8,13 +8,11 @@
     <select [(ngModel)]="Soort">
         <option *ngFor="let item of typeOfBirdOptions">{{item}}</option>
     </select>
-    <p>Jaartal: </p><input type="text" placeholder="Jaartal..." [(ngModel)]="Jaartal" />
-    <p>Kotnummer: </p><input type="text" placeholder="Kotnummer..." [(ngModel)]="Kotnummer" />
+    <p>Jaartal: </p><input type="number" placeholder="Jaartal..." [(ngModel)]="Jaartal" />
+    <p>Kotnummer: </p><input type="number" placeholder="Kotnummer..." [(ngModel)]="Kotnummer" />
     <p>Eigenaar: </p>
     <select [(ngModel)]="EigenaarID">
-        <option  *ngFor="let item of ownerOptions" value="{{item.id}}">{{item.voornaam}} {{item.achternaam}}</option>
+        <option  *ngFor="let item of ownerOptions" [ngValue]="item.id">{{item.voornaam}} {{item.achternaam}}</option>
     </select>
     <button pButton type="button" label="Opslaan" icon="pi pi-check" (click)="CreateBird()"></button>
 </div>
-
-
