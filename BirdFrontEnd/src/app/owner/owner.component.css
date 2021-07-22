@@ -2,3 +2,16 @@
     margin-left: 15%;
     margin-right: 15%;
 }
+
+.searchbar{
+    margin-left: 20px;
+}
+
+.select-owners{
+    float: right;
+}
+
+.select-sort{
+    float: right;
+    margin-right: 20px;
+}

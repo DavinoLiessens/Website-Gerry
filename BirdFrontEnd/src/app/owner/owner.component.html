@@ -1,27 +1,23 @@
 <div class="card">
     <p-table #dt1 [value]="owners" dataKey="id"
-        [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" styleClass="p-datatable-customers p-datatable-gridlines"
+        [rows]="10" [showCurrentPageReport]="true" styleClass="p-datatable-customers p-datatable-gridlines"
         [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
         <ng-template pTemplate="caption">
             <div class="p-d-flex">
                 <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
-                <span class="p-input-icon-left p-ml-auto">
-                    <i class="pi pi-search"></i>
-                    <input pInputText type="text" [(ngModel)]="SearchName" placeholder="Zoek Eigenaar" />   
-                </span>
-            </div>
-            <div class="select">
-                <label>Aantal Eigenaars: </label>
-                <select class="paging" [(ngModel)]="NoOwners">
-                    <option *ngFor="let item of items"  value="{{item}}">{{item}}</option>
-                </select>
-            </div>
-    
-            <div class="select">
-                <label>Sorteer op: </label>
-                <select class="sorting" [(ngModel)]="SortItemOwners">
-                    <option *ngFor="let item of sortItems"  value="{{item}}">{{item}}</option>
-                </select>
+                
+                    <input pInputText type="text" class="searchbar" [(ngModel)]="SearchName" placeholder="Zoek Eigenaar" />  
+                    <button pButton pRipple type="button" class="searchbar" style="margin-left: 5px;" label="Zoek" class="p-button-raised" (onclick)="SearchOwner()"></button> 
+                    
+                    <div class="select-owners">
+                        <label>Aantal Eigenaars: </label>
+                        <p-dropdown [options]="items" [(ngModel)]="NoOwners" placeholder="Selecteer..." [showClear]="true"></p-dropdown>
+                    </div>
+            
+                    <div class="select-sort">
+                        <label>Sorteer op: </label>
+                        <p-dropdown [options]="sortItems" [(ngModel)]="SortItemOwners" placeholder="Selecteer..." [showClear]="true"></p-dropdown>
+                    </div> 
             </div>
         </ng-template>
         <ng-template pTemplate="header">
