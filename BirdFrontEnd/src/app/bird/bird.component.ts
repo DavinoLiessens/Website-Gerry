@@ -13,6 +13,9 @@ export class BirdComponent implements OnInit {
     items: number[];
     sortItems: string[];
 
+    public noBirds: number = this.birdService.noBirds;
+    public sortItemBirds: string = this.birdService.sortItemBirds;
+
     constructor(private birdService: BirdService, private apiService: ApiService) { 
       this.items = [5,10,15,20,25,50,100];
       this.sortItems = ["Alles", "Eigenaar"];
@@ -26,7 +29,11 @@ export class BirdComponent implements OnInit {
     GetAllBirds(){
       try{
         console.log("Alle vogels ophalen.");
-        this.apiService.GetAllBirds().subscribe((res) => this.birds = res);
+        this.birdService.GetAllBirds().subscribe((res) => {
+          this.birds = res
+          console.log(res);
+        });
+        
       }
       catch{
         console.log("Er was een probleem");
