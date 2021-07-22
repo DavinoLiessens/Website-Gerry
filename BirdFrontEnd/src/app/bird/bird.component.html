@@ -65,6 +65,11 @@
                         <p-columnFilter type="numeric" field="cagenumber" display="menu"></p-columnFilter>
                     </div>
                 </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Item Verwijderen
+                    </div>
+                </th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-bird>
@@ -89,6 +94,9 @@
                 </td>
                 <td>
                     <p>{{bird.kotnummer}}</p>
+                </td>
+                <td>
+                    <button pButton pRipple type="button" label="Verwijder" class="p-button-danger" (click)="DeleteBird(bird.id)"></button>
                 </td>
             </tr>
         </ng-template>

@@ -35,6 +35,13 @@ export class OwnerComponent implements OnInit {
     }
   }
 
+  DeleteOwner(id: number){
+    this.ownerService.DeleteOwner(id).subscribe(result => {
+      console.log("Item verwijderd!");
+      this.GetAllOwners();
+    });
+  }
+
   get SearchName(){
     return this.ownerService.SearchName;
   }

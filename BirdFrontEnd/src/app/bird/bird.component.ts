@@ -51,6 +51,13 @@ export class BirdComponent implements OnInit {
       })
     }
 
+    DeleteBird(id: number){
+      this.birdService.DeleteBird(id).subscribe(result => {
+        console.log("Item verwijderd!");
+        this.GetAllBirds();
+      });
+    }
+
     get SearchName() {
       return this.birdService.SearchName;
     }
