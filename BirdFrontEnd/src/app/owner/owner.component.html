@@ -1,1 +1,68 @@
-<p>owner works!</p>
+<div class="card">
+    <p-table #dt1 [value]="owners" dataKey="id"
+        [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" styleClass="p-datatable-customers p-datatable-gridlines"
+        [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+                <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+                <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" [(ngModel)]="SearchName" placeholder="Zoek Eigenaar" />   
+                </span>
+            </div>
+            <div class="select">
+                <label>Aantal Eigenaars: </label>
+                <select class="paging" [(ngModel)]="NoOwners">
+                    <option *ngFor="let item of items"  value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+    
+            <div class="select">
+                <label>Sorteer op: </label>
+                <select class="sorting" [(ngModel)]="SortItemOwners">
+                    <option *ngFor="let item of sortItems"  value="{{item}}">{{item}}</option>
+                </select>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        ID 
+                        <p-columnFilter type="text" field="id" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Voornaam
+                        <p-columnFilter type="text" field="firstname" display="menu"></p-columnFilter>
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Achternaam 
+                        <p-columnFilter type="text" field="lastname" display="menu"></p-columnFilter>
+                    </div>
+                </th>                
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-owner>
+            <tr>
+                <td>
+                    <p>{{owner.id}}</p>
+                </td>
+                <td>
+                    <p>{{owner.voornaam}}</p>
+                </td>
+                <td>
+                    <p>{{owner.achternaam}}</p>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="7">Geen eigenaars gevonden.</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
