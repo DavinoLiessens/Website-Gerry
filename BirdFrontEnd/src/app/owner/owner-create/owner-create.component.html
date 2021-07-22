@@ -1,1 +1,5 @@
-<p>owner-create works!</p>
+<div class="item">
+    <p>Voornaam: </p><input type="text" placeholder="Voornaam..." [(ngModel)]="Voornaam" />
+    <p>achternaam: </p><input type="text" placeholder="Achternaam..." [(ngModel)]="Achternaam" />
+    <button pButton type="button" label="Opslaan" icon="pi pi-check" (click)="CreateOwner()"></button>
+</div>

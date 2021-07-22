@@ -56,12 +56,12 @@ export class BirdCreateComponent implements OnInit {
       };
 
       this.apiService.CreateBird(this.newBird).subscribe(result => {
-        alert("Succesfull Created!");
+        alert("Vogel succesvol aangemaakt!");
         console.log(this.newBird);
         this.router.navigate(['/birds']);
       },
       error => {
-        alert("Create failed!");
+        alert("Er liep iets mis!");
         console.log(error);
         console.log(this.newBird);
       });
