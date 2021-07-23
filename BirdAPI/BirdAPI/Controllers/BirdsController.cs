@@ -27,9 +27,9 @@ namespace BirdAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllBirds()
+        public async Task<IActionResult> GetAllBirds(string soort)
         {
-            List<BirdVM> vm = await _birdService.GetAllBirds();
+            List<BirdVM> vm = await _birdService.GetAllBirds(soort);
             return Ok(vm);
         }
 

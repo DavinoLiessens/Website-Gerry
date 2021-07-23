@@ -4,6 +4,7 @@ using DAL.DB_Models;
 using DAL.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@ namespace BLL.Services
     public interface IBirdService
     {
         Task<BirdVM> GetBird(int id);
-        Task<List<BirdVM>> GetAllBirds();
+        Task<List<BirdVM>> GetAllBirds(string soort);
         Task<BirdVM> CreateBird(CreateBirdVM body);
         Task<BirdVM> DeleteBird(int id);
         Task<BirdVM> ChangeBird(int id, ChangeBirdVM body);
@@ -78,15 +79,23 @@ namespace BLL.Services
             return viewmodel;
         }
 
-        public async Task<List<BirdVM>> GetAllBirds()
+        public async Task<List<BirdVM>> GetAllBirds(string soort)
         {
-            List<Bird> bird = await _repo.GetAllBirds();
-            List<BirdVM> viewmodel = _mapper.Map<List<BirdVM>>(bird);
+            List<Bird> birds = await _repo.GetAllBirds();
+
+            IQueryable<Bird> query = birds.AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(soort))
+            {
+                query = query.Where(x => x.Soort.ToLower().Contains(soort.ToLower()));
+            }
+
+            List<BirdVM> viewmodel = _mapper.Map<List<BirdVM>>(query.ToList());
 
             int i = 0;
             foreach(var item in viewmodel)
             {
-                Bird newBird = bird[i];
+                Bird newBird = birds[i];
                 item.OwnerFullName = $"{newBird.Eigenaar.Voornaam} {newBird.Eigenaar.Achternaam}";
                 i++;
             }
