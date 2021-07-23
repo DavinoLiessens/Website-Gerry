@@ -1,0 +1,13 @@
+.item{
+    float:left;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.p-text{
+    float:left;
+}
+
+.inputfield{
+    float: right;
+}

@@ -12,6 +12,7 @@ import { VirtualScrollerModule } from 'primeng/virtualscroller';
 import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
+import { PanelModule } from 'primeng/panel';
 
 // *** COMPONENTS ***
 import { AppComponent } from './app.component';
@@ -50,7 +51,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     VirtualScrollerModule,
     FormsModule,
     InputTextModule,
-    DropdownModule
+    DropdownModule,
+    PanelModule
   ],
   providers: [],
   bootstrap: [AppComponent]
