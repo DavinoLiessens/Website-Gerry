@@ -33,8 +33,12 @@ export class ApiService {
     });
   }
 
-  UpdateBird(updateBird: Bird) {
-    return this._http.patch<Bird>(`http://localhost:4000/api/v1/birds`, updateBird);
+  UpdateBird(id: number, updateBird: ChangeBird) {
+    return this._http.patch<ChangeBird>(`http://localhost:4000/api/v1/birds/${id}`, updateBird, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
   }
 
   DeleteBird(id: number) {
@@ -71,7 +75,7 @@ export class ApiService {
 }
 
 export interface Bird{
-  ID?: number;
+  id?: number;
   ringnummer: number;
   geslacht: string;
   soort: string;
@@ -83,7 +87,7 @@ export interface Bird{
 }
 
 export interface Owner{
-  ID?: number;
+  id?: number;
   voornaam: string;
   achternaam: string;
 }
@@ -93,6 +97,12 @@ export interface CreateBird{
   geslacht: string;
   soort: string;
   jaartal: number;
+  kotnummer: number;
+  eigenaarID: number;
+}
+
+export interface ChangeBird {
+  ringnummer: number;
   kotnummer: number;
   eigenaarID: number;
 }

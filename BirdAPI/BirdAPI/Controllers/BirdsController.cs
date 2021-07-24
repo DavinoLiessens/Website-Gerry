@@ -1,5 +1,6 @@
 ﻿using BLL.Services;
 using BLL.ViewModels;
+using DAL.DB_Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -27,9 +28,9 @@ namespace BirdAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllBirds(string soort)
+        public async Task<IActionResult> GetAllBirds(string soort, int? kotnummer, int? ringnummer, string sort, int? page, int length = 10, string dir = "asc")
         {
-            List<BirdVM> vm = await _birdService.GetAllBirds(soort);
+            List<BirdVM> vm = await _birdService.GetAllBirds(soort, kotnummer, ringnummer, sort, page, length, dir);
             return Ok(vm);
         }
 

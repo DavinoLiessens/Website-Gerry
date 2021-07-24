@@ -1,1 +1,16 @@
-<p>bird-update works!</p>
+<p-panel header="Vogel Aanpassen: " *ngIf="bird" style="float:left; width: 350px; margin-left: 2%; margin-top: 2%;">
+    <div><p class="p-text">Ringnummer: </p><input pInputText type="number" class="inputfield" placeholder="{{bird.ringnummer}}" [(ngModel)]="bird.ringnummer" /></div><br><br><br>
+        <div><p class="p-text" style="margin-left: 29px;">Geslacht: </p>
+            <input pInputText type="text" class="inputfield" placeholder="{{bird.geslacht}}" [disabled]="disabled" [(ngModel)]="bird.geslacht" />
+        </div><br><br><br>
+        <div><p class="p-text" style="margin-left: 50px;">Soort: </p>
+            <input pInputText type="text" class="inputfield" placeholder="{{bird.soort}}" [disabled]="disabled" [(ngModel)]="bird.soort" />
+        </div><br><br><br>
+        <div><p class="p-text" style="margin-left: 43px;">Jaartal: </p><input pInputText type="number" class="inputfield" [disabled]="disabled" placeholder="{{bird.jaartal}}" [(ngModel)]="bird.jaartal" /></div><br><br><br>
+        <div><p class="p-text" style="margin-left: 10px;">Kotnummer: </p><input pInputText type="number" class="inputfield" placeholder="{{bird.kotnummer}}" [(ngModel)]="bird.kotnummer" /></div><br><br><br>
+        <div><p class="p-text" style="margin-left: 30px;">Eigenaar: </p>
+            <select [(ngModel)]="bird.eigenaarID" required class="inputfield" style="width: 195px; height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                <option  *ngFor="let item of ownerOptions" [ngValue]="item.id">{{item.voornaam}} {{item.achternaam}}</option>
+            </select></div><br><br><br><br>
+        <button pButton type="button" label="Opslaan" icon="pi pi-check" (click)="SaveBird()" class="inputfield" style="margin-top: -30px"></button>    
+</p-panel>

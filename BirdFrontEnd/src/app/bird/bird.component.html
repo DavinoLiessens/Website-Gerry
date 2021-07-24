@@ -67,6 +67,11 @@
                 </th>
                 <th>
                     <div class="p-d-flex p-jc-between p-ai-center">
+                        Item Bewerken
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
                         Item Verwijderen
                     </div>
                 </th>
@@ -96,7 +101,10 @@
                     <p>{{bird.kotnummer}}</p>
                 </td>
                 <td>
-                    <button pButton pRipple type="button" label="Verwijder" class="p-button-danger" (click)="DeleteBird(bird.id)"></button>
+                    <button pButton pRipple type="button" label="Bewerk" class="p-button-raised" style="margin-left: 25px;" routerLink="/birds/update/{{bird.id}}"></button>
+                </td>
+                <td>
+                    <button pButton pRipple type="button" label="Verwijder" class="p-button-danger" style="margin-left: 20px;" (click)="DeleteBird(bird.id)"></button>
                 </td>
             </tr>
         </ng-template>

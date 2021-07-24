@@ -13,7 +13,7 @@ namespace BLL.Services
     public interface IBirdService
     {
         Task<BirdVM> GetBird(int id);
-        Task<List<BirdVM>> GetAllBirds(string soort);
+        Task<List<BirdVM>> GetAllBirds(string soort, int? kotnummer, int? ringnummer, string sort, int? page, int length = 10, string dir = "asc");
         Task<BirdVM> CreateBird(CreateBirdVM body);
         Task<BirdVM> DeleteBird(int id);
         Task<BirdVM> ChangeBird(int id, ChangeBirdVM body);
@@ -79,16 +79,64 @@ namespace BLL.Services
             return viewmodel;
         }
 
-        public async Task<List<BirdVM>> GetAllBirds(string soort)
+        public async Task<List<BirdVM>> GetAllBirds(string soort, int? kotnummer, int? ringnummer, string sort, int? page, int length = 10, string dir = "asc")
         {
             List<Bird> birds = await _repo.GetAllBirds();
 
             IQueryable<Bird> query = birds.AsQueryable();
 
+            // query om te filteren
             if (!string.IsNullOrWhiteSpace(soort))
             {
                 query = query.Where(x => x.Soort.ToLower().Contains(soort.ToLower()));
             }
+
+            if(kotnummer != null)
+            {
+                query = query.Where(x => x.Kotnummer == kotnummer);
+            }
+
+            if(ringnummer != null)
+            {
+                query = query.Where(x => x.Ringnummer == ringnummer);
+            }
+
+            // query om te sorteren
+            if (!string.IsNullOrWhiteSpace(sort))
+            {
+                switch (sort)
+                {
+                    case "ringnummer":
+                        if (dir == "asc")
+                            query = query.OrderBy(d => d.Ringnummer);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(d => d.Ringnummer);
+                        break;
+                    case "kotnummer":
+                        if (dir == "asc")
+                            query = query.OrderBy(d => d.Kotnummer);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(d => d.Kotnummer);
+                        break;
+                    case "soort":
+                        if (dir == "asc")
+                            query = query.OrderBy(d => d.Soort);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(d => d.Soort);
+                        break;
+                    case "eigenaar":
+                        if (dir == "asc")
+                            query = query.OrderBy(d => d.Eigenaar.Voornaam);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(d => d.Eigenaar.Voornaam);
+                        break;
+                }
+            }
+
+            // query voor paging
+            if (page.HasValue)
+                query = query.Skip(page.Value * length);
+            query = query.Take(length);
 
             List<BirdVM> viewmodel = _mapper.Map<List<BirdVM>>(query.ToList());
 

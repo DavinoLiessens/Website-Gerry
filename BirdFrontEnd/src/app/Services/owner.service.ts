@@ -23,9 +23,9 @@ export class OwnerService {
     this.apiService.GetAllOwners(this.searchName);
   }
 
-  GetAllOwners(){
+  GetAllOwners(query: string = ''){
     this.Owners = [];
-    return this.apiService.GetAllOwners();
+    return this.apiService.GetAllOwners(query);
   }
 
   GetOwner(id: number){

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ApiService, Bird, CreateBird } from './api.service';
+import { ApiService, Bird, ChangeBird, CreateBird } from './api.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -36,8 +36,8 @@ export class BirdService {
     return this.apiService.CreateBird(newBird);
   }
 
-  UpdateBird(updateBird: Bird){
-    return this.apiService.UpdateBird(updateBird);
+  UpdateBird(id: number, updateBird: ChangeBird){
+    return this.apiService.UpdateBird(id, updateBird);
   }
 
   DeleteBird(id: number){
