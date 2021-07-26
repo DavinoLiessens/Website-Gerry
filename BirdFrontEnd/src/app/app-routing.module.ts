@@ -20,9 +20,8 @@ const routes: Routes = [
   // OWNER
   {path: "owners", component: OwnerComponent},
   {path: "owners/create", component: OwnerCreateComponent},
-  {path: "owners/update/:id", component: OwnerUpdateComponent},
+  // {path: "owners/update/:id", component: OwnerUpdateComponent},
   {path: "owners/:id", component: OwnerDetailComponent},
-
   // PAGE NOT FOUND
   {path: "*", component: PageNotFoundComponent},
 
