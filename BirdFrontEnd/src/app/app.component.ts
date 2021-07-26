@@ -22,11 +22,6 @@ export class AppComponent {
           label: 'Vogel Aanmaken',
           icon: 'pi pi-plus',
           routerLink: '/birds/create'
-      },
-      {
-          label: 'Vogel Aanpassen',
-          icon: 'pi pi-sliders-h',
-          routerLink: '/birds/update/:id'
       }
   ];
 
@@ -40,11 +35,6 @@ export class AppComponent {
         label: 'Eigenaar Aanmaken',
         icon: 'pi pi-plus',
         routerLink: '/owners/create'
-    },
-    {
-        label: 'Eigenaar Aanpassen',
-        icon: 'pi pi-sliders-h',
-        routerLink: '/owners/update/:id'
     }
 ];
   }
