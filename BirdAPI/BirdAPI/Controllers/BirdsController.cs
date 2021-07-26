@@ -28,9 +28,9 @@ namespace BirdAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllBirds(string soort, int? kotnummer, int? ringnummer, string sort, int? page, int length = 10, string dir = "asc")
+        public async Task<IActionResult> GetAllBirds(string owner, string soort, int? kotnummer, int? ringnummer, string sort, int? page, int length = 10, string dir = "asc")
         {
-            List<BirdVM> vm = await _birdService.GetAllBirds(soort, kotnummer, ringnummer, sort, page, length, dir);
+            List<BirdVM> vm = await _birdService.GetAllBirds(owner, soort, kotnummer, ringnummer, sort, page, length, dir);
             return Ok(vm);
         }
 

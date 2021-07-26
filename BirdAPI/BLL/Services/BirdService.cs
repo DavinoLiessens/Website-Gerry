@@ -13,7 +13,7 @@ namespace BLL.Services
     public interface IBirdService
     {
         Task<BirdVM> GetBird(int id);
-        Task<List<BirdVM>> GetAllBirds(string soort, int? kotnummer, int? ringnummer, string sort, int? page, int length = 10, string dir = "asc");
+        Task<List<BirdVM>> GetAllBirds(string owner, string soort, int? kotnummer, int? ringnummer, string sort, int? page, int length = 10, string dir = "asc");
         Task<BirdVM> CreateBird(CreateBirdVM body);
         Task<BirdVM> DeleteBird(int id);
         Task<BirdVM> ChangeBird(int id, ChangeBirdVM body);
@@ -56,7 +56,7 @@ namespace BLL.Services
 
             bird = await _repo.ChangeBird(bird);
             BirdVM viewmodel = _mapper.Map<BirdVM>(bird);
-            viewmodel.OwnerFullName = $"{bird.Eigenaar.Voornaam} {bird.Eigenaar.Achternaam}";
+            //viewmodel.OwnerFullName = $"{bird.Eigenaar.Voornaam} {bird.Eigenaar.Achternaam}";
             return viewmodel;
         }
 
@@ -66,7 +66,7 @@ namespace BLL.Services
             bird = await _repo.CreateBird(bird);
 
             BirdVM viewmodel = _mapper.Map<BirdVM>(bird);
-            viewmodel.OwnerFullName = $"{bird.Eigenaar.Voornaam} {bird.Eigenaar.Achternaam}";
+            //viewmodel.OwnerFullName = $"{bird.Eigenaar.Voornaam} {bird.Eigenaar.Achternaam}";
 
             return viewmodel;
         }
@@ -79,14 +79,18 @@ namespace BLL.Services
             return viewmodel;
         }
 
-        public async Task<List<BirdVM>> GetAllBirds(string soort, int? kotnummer, int? ringnummer, string sort, int? page, int length = 10, string dir = "asc")
+        public async Task<List<BirdVM>> GetAllBirds(string owner, string soort, int? kotnummer, int? ringnummer, string sort, int? page, int length = 10, string dir = "asc")
         {
             List<Bird> birds = await _repo.GetAllBirds();
 
             IQueryable<Bird> query = birds.AsQueryable();
 
             // query om te filteren
-            if (!string.IsNullOrWhiteSpace(soort))
+            if (!string.IsNullOrWhiteSpace(owner))
+            {
+                query = query.Where(x => x.Eigenaar.Voornaam.ToLower().Contains(owner.ToLower()));
+            }
+                if (!string.IsNullOrWhiteSpace(soort))
             {
                 query = query.Where(x => x.Soort.ToLower().Contains(soort.ToLower()));
             }
@@ -140,14 +144,14 @@ namespace BLL.Services
 
             List<BirdVM> viewmodel = _mapper.Map<List<BirdVM>>(query.ToList());
 
-            int i = 0;
-            foreach(var item in viewmodel)
-            {
-                Bird newBird = birds[i];
-                item.OwnerFullName = $"{newBird.Eigenaar.Voornaam} {newBird.Eigenaar.Achternaam}";
-                i++;
-            }
-            i = 0;
+            //int i = 0;
+            //foreach(var item in viewmodel)
+            //{
+            //    Bird newBird = birds[i];
+            //    item.OwnerFullName = $"{newBird.Eigenaar.Voornaam} {newBird.Eigenaar.Achternaam}";
+            //    i++;
+            //}
+            //i = 0;
 
             return viewmodel;
         }
@@ -156,7 +160,7 @@ namespace BLL.Services
         {
             Bird dbModel = await _repo.GetBird(id);
             BirdVM viewModel = _mapper.Map<BirdVM>(dbModel);
-            viewModel.OwnerFullName = $"{dbModel.Eigenaar.Voornaam} {dbModel.Eigenaar.Achternaam}";
+            //viewModel.OwnerFullName = $"{dbModel.Eigenaar.Voornaam} {dbModel.Eigenaar.Achternaam}";
             {//BirdVM viewModel = new BirdVM
              //{
              //    ID = dbModel.ID,
