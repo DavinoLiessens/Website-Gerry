@@ -1,22 +1,26 @@
 <div class="card">
     <p-table #dt1 [value]="birds" dataKey="id"
-        [rows]="10" [showCurrentPageReport]="true" styleClass="p-datatable-customers p-datatable-gridlines"
+        [rows]="25" [showCurrentPageReport]="true" styleClass="p-datatable-customers p-datatable-gridlines"
         [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
         [globalFilterFields]="['id','owner','sex','ringnumber', 'typeOfBird', 'age', 'cagenumber']">
         <ng-template pTemplate="caption">
             <div class="p-d-flex">
                 <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>             
                 <input pInputText type="text" class="searchbar" [(ngModel)]="SearchName" placeholder="Zoek Eigenaar" />  
-                <button pButton pRipple type="button" class="searchbar" style="margin-left: 5px;" label="Zoek" class="p-button-raised" (onclick)="SearchOwner()"></button> 
+                <!--<button pButton pRipple type="button" class="searchbar" style="margin-left: 5px;" label="Zoek" class="p-button-raised"></button> -->
                 
                 <div class="select-birds">
                     <label>Aantal Vogels: </label>
-                    <p-dropdown [options]="items" [(ngModel)]="NoBirds" placeholder="Selecteer..." [showClear]="true"></p-dropdown>
+                    <select [(ngModel)]="NoBirds" required class="inputfield" style="width: 80px; height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                        <option *ngFor="let item of items" value={{item}}>{{item}}</option>
+                    </select>
                 </div>
         
                 <div class="select-sort">
                     <label>Sorteer op: </label>
-                    <p-dropdown [options]="sortItems" [(ngModel)]="SortItemBirds" placeholder="Selecteer..." [showClear]="true"></p-dropdown>
+                    <select [(ngModel)]="SortItemBirds" required class="inputfield" style="width: 100px; height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                        <option *ngFor="let item of sortItems" value={{item}}>{{item}}</option>
+                    </select>
                 </div>
             </div>
             
@@ -83,7 +87,7 @@
                     <p>{{bird.id}}</p>
                 </td>
                 <td>
-                    <p>{{bird.ownerFullName}}</p>
+                    <p>{{bird.eigenaar.voornaam}} {{bird.eigenaar.achternaam}}</p>
                 </td>
                 <td>
                     <p>{{bird.geslacht}}</p>

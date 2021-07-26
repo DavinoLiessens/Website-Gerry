@@ -7,18 +7,21 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ApiService {
 
   // SORTING AND FILTERING AND PAGING
-  public noBirds: number = 5;
-  public sortItemBirds: string;
+  public noBirds: number = 10;
+  public sortItemBirds: string = 'Alles';
+  public searchnameBird: string = '';
 
-  public noOwners: number = 3;
+  public noOwners: number = 5;
   public sortItemOwners: string;
+  public searchnameOwner: string = '';
 
   constructor(private _http: HttpClient) { }
 
   // ***** BIRD CALLS *****
-  GetAllBirds(query: string = '') {
+  GetAllBirds() {
     //return this._http.get<Bird[]>(`http://localhost:4000/api/v1/birds?name=${query}&length=${this.noBirds}&sort=${this.sortItemBirds}`);
-    return this._http.get<Bird[]>(`http://localhost:4000/api/v1/birds?name=${query}`);
+    return this._http.get<Bird[]>(`http://localhost:4000/api/v1/birds?owner=${this.searchnameBird}&sort=${this.sortItemBirds}&length=${this.noBirds}&dir=asc`);
+    // http://localhost:4000/api/v1/birds?length=${this.noBirds}&dir=asc
   }
 
   GetBird(id: number) {

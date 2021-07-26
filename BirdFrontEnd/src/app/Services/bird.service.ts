@@ -7,25 +7,11 @@ import { ApiService, Bird, ChangeBird, CreateBird } from './api.service';
 export class BirdService {
 
   public Birds: Bird[];
-  private searchName: string;
-
-  public noBirds: number = this.apiService.noBirds;
-  public sortItemBirds: string = this.apiService.sortItemBirds;
 
   constructor(private _http: HttpClient, private apiService: ApiService) { }
 
-  get SearchName(){
-    return this.searchName;
-  }
-
-  set SearchName(value: string){
-    this.searchName = value;
-    this.apiService.GetAllBirds(this.searchName);
-  }
-
   GetAllBirds(){
-      this.Birds = [];
-      return this.apiService.GetAllBirds(this.searchName);
+      return this.apiService.GetAllBirds();
   }
 
   GetBird(id: number){
