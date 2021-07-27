@@ -1,22 +1,26 @@
 <div class="card">
     <p-table #dt1 [value]="owners" dataKey="id"
-        [rows]="10" [showCurrentPageReport]="true" styleClass="p-datatable-customers p-datatable-gridlines"
+        [rows]="25" [showCurrentPageReport]="true" styleClass="p-datatable-customers p-datatable-gridlines"
         [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
         <ng-template pTemplate="caption">
             <div class="p-d-flex">
-                <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="clear(dt1)"></button>
+                <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="ClearFilters()"></button>
                 
                     <input pInputText type="text" class="searchbar" [(ngModel)]="SearchName" placeholder="Zoek Eigenaar" />  
-                    <button pButton pRipple type="button" class="searchbar" style="margin-left: 5px;" label="Zoek" class="p-button-raised" (onclick)="SearchOwner()"></button> 
+                    <!-- <button pButton pRipple type="button" class="searchbar" style="margin-left: 5px;" label="Zoek" class="p-button-raised" (onclick)="SearchOwner()"></button> -->
                     
                     <div class="select-owners">
                         <label>Aantal Eigenaars: </label>
-                        <p-dropdown [options]="items" [(ngModel)]="NoOwners" placeholder="Selecteer..." [showClear]="true"></p-dropdown>
+                        <select [(ngModel)]="NoOwners" required class="inputfield" style="width: 80px; height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                            <option *ngFor="let item of items" value={{item}}>{{item}}</option>
+                        </select>
                     </div>
             
                     <div class="select-sort">
                         <label>Sorteer op: </label>
-                        <p-dropdown [options]="sortItems" [(ngModel)]="SortItemOwners" placeholder="Selecteer..." [showClear]="true"></p-dropdown>
+                        <select [(ngModel)]="SortItemOwners" required class="inputfield" style="width: 80px; height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                            <option *ngFor="let item of sortItems" value={{item}}>{{item}}</option>
+                        </select>
                     </div> 
             </div>
         </ng-template>

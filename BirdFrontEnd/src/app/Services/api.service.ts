@@ -11,8 +11,8 @@ export class ApiService {
   public sortItemBirds: string = 'Alles';
   public searchnameBird: string = '';
 
-  public noOwners: number = 5;
-  public sortItemOwners: string;
+  public noOwners: number = 10;
+  public sortItemOwners: string = 'Alles';
   public searchnameOwner: string = '';
 
   constructor(private _http: HttpClient) { }
@@ -50,9 +50,9 @@ export class ApiService {
   }
 
   // ***** OWNER CALLS *****
-  GetAllOwners(query: string = '') {
-    //return this._http.get<Bird[]>(`http://localhost:4000/api/v1/birds?name=${query}&length=${this.noOwners}&sort=${this.sortItemOwners}`);
-    return this._http.get<Owner[]>(`http://localhost:4000/api/v1/owners?name=${query}`);
+  GetAllOwners() {
+    //http://localhost:4000/api/v1/owners?name=davino&sort=voornaam&length=10&dir=asc
+    return this._http.get<Owner[]>(`http://localhost:4000/api/v1/owners?name=${this.searchnameOwner}&sort=${this.sortItemOwners}&length=${this.noOwners}&dir=asc`);
   }
 
   GetOwner(id: number) {

@@ -7,25 +7,12 @@ import { ApiService, Owner } from './api.service';
 export class OwnerService {
 
   public Owners: Owner[];
-  private searchName: string;
-
-  public noOwners: number = this.apiService.noOwners;
-  public sortItemOwners: string = this.apiService.sortItemOwners;
 
   constructor(private apiService: ApiService) { }
 
-  get SearchName(){
-    return this.searchName;
-  }
-
-  set SearchName(value: string){
-    this.searchName = value;
-    this.apiService.GetAllOwners(this.searchName);
-  }
-
-  GetAllOwners(query: string = ''){
+  GetAllOwners(){
     this.Owners = [];
-    return this.apiService.GetAllOwners(query);
+    return this.apiService.GetAllOwners();
   }
 
   GetOwner(id: number){

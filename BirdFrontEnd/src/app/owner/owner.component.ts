@@ -15,11 +15,8 @@ export class OwnerComponent implements OnInit {
 
   constructor(private apiService: ApiService, private ownerService: OwnerService) { 
     this.items = [5,10,15,20,25,50,100];
-    this.sortItems = ["Alles", "Voornaam"];
+    this.sortItems = ["Alles", "Voornaam", "Achternaam"];
   }
-
-  public noOwners: number = this.ownerService.noOwners;
-  public sortItemOwners: string = this.ownerService.sortItemOwners;
 
   ngOnInit(): void {
     this.GetAllOwners();
@@ -27,37 +24,69 @@ export class OwnerComponent implements OnInit {
 
   GetAllOwners(){
     try{
-      console.log("Eigenaars ophalen.");
       this.ownerService.GetAllOwners().subscribe((res) => this.owners = res);
     }
     catch{
-      console.log("Er was eenprobleem.");
+      alert("Er was een probleem.");
     }
   }
 
   DeleteOwner(id: number){
     this.ownerService.DeleteOwner(id).subscribe(result => {
-      console.log("Item verwijderd!");
       this.GetAllOwners();
     });
   }
 
-  get SearchName(){
-    return this.ownerService.SearchName;
+  get SearchName() {
+    return this.apiService.searchnameOwner;
   }
 
   set SearchName(value: string){
-    this.ownerService.SearchName = value;
-    this.apiService.GetAllOwners(value).subscribe((res) => this.owners = res);
+    this.apiService.searchnameOwner = value;
+    this.apiService.GetAllOwners().subscribe(result => {
+      this.owners = result;
+    },
+    error => console.log(error));
   }
 
   get NoOwners(){
-    return this.ownerService.noOwners;
+    return this.apiService.noOwners;
   }
 
   set NoOwners(value: number){
-    this.ownerService.noOwners = value;
+    this.apiService.noOwners = value;
     this.apiService.GetAllOwners().subscribe((res) => this.owners = res);
+  }
+
+  get SortItemOwners(){
+    return this.apiService.sortItemOwners;
+  }
+
+  set SortItemOwners(value: string){
+    if(value == "Alles"){
+      this.apiService.sortItemOwners = '';
+    }
+    else{
+      this.apiService.sortItemOwners = value.toLocaleLowerCase();
+    }
+
+    this.apiService.GetAllOwners().subscribe(result => {
+      this.owners = result;
+    },
+    error => {
+      console.log(error);
+    });    
+  }
+
+  ClearFilters(){
+    this.apiService.searchnameOwner = '';
+    this.apiService.sortItemOwners = 'Alles';
+    this.apiService.noOwners = 10;
+    
+    this.apiService.GetAllOwners().subscribe(result => {
+      this.owners = result;
+    }, error =>
+    console.log("Er liep iets mis!", error));
   }
 
 }
