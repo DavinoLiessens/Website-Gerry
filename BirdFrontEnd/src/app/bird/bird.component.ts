@@ -26,8 +26,7 @@ export class BirdComponent implements OnInit {
     GetAllBirds(){
       try{
         this.birdService.GetAllBirds().subscribe((res) => {
-          this.birds = res
-          console.log(res);
+          this.birds = res;
         });
         
       }
@@ -36,20 +35,8 @@ export class BirdComponent implements OnInit {
       }
     }
 
-    /*SearchOwner() {
-      this.apiService.GetAllBirds(this.birdService.SearchName).subscribe(result => {
-        this.birds = [];
-        this.birds = result;
-        console.log(this.birds);
-      },
-        error => {
-          console.log(error);
-        })
-    }*/
-
     DeleteBird(id: number){
       this.birdService.DeleteBird(id).subscribe(result => {
-        console.log("Item verwijderd!");
         this.GetAllBirds();
       });
     }
@@ -98,6 +85,49 @@ export class BirdComponent implements OnInit {
       },
       error => {
         console.log(error);
-      })
+      });
+    }
+
+    get RingNumber(){
+      return this.apiService.ringNumber;
+    }
+
+    set RingNumber(value: number){
+      this.apiService.ringNumber = value;
+
+      this.apiService.GetAllBirdsWithRingNumber().subscribe(result => {
+        this.birds = result;
+      },
+      error => {
+        console.log(error);
+      });
+    }
+
+    get KotNumber(){
+      return this.apiService.kotNumber;
+    }
+
+    set KotNumber(value: number){
+      this.apiService.kotNumber = value;
+
+      this.apiService.GetAllBirdsWithKotNumber().subscribe(result => {
+        this.birds = result;
+      },
+      error => {
+        console.log(error);
+      });
+    }
+
+    ClearFilters(){
+      this.apiService.searchnameBird = '';
+      this.apiService.sortItemBirds = 'Alles';
+      this.apiService.kotNumber = null;
+      this.apiService.ringNumber = null;
+      this.apiService.noBirds = 10;
+      
+      this.apiService.GetAllBirds().subscribe(result => {
+        this.birds = result;
+      }, error =>
+      console.log("Er liep iets mis!", error));
     }
 }

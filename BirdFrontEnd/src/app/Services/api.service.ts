@@ -7,10 +7,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class ApiService {
 
   // SORTING AND FILTERING AND PAGING
+  // BIRD
   public noBirds: number = 10;
   public sortItemBirds: string = 'Alles';
   public searchnameBird: string = '';
+  public ringNumber: number;
+  public kotNumber: number;
 
+  // OWNER
   public noOwners: number = 10;
   public sortItemOwners: string = 'Alles';
   public searchnameOwner: string = '';
@@ -22,6 +26,14 @@ export class ApiService {
     //return this._http.get<Bird[]>(`http://localhost:4000/api/v1/birds?name=${query}&length=${this.noBirds}&sort=${this.sortItemBirds}`);
     return this._http.get<Bird[]>(`http://localhost:4000/api/v1/birds?owner=${this.searchnameBird}&sort=${this.sortItemBirds}&length=${this.noBirds}&dir=asc`);
     // http://localhost:4000/api/v1/birds?length=${this.noBirds}&dir=asc
+  }
+
+  GetAllBirdsWithRingNumber(){
+    return this._http.get<Bird[]>(`http://localhost:4000/api/v1/birds?owner=${this.searchnameBird}&sort=${this.sortItemBirds}&ringnummer=${this.ringNumber}&length=${this.noBirds}&dir=asc`);
+  }
+
+  GetAllBirdsWithKotNumber(){
+    return this._http.get<Bird[]>(`http://localhost:4000/api/v1/birds?owner=${this.searchnameBird}&sort=${this.sortItemBirds}&kotnummer=${this.kotNumber}&length=${this.noBirds}&dir=asc`);
   }
 
   GetBird(id: number) {

@@ -13,7 +13,7 @@ namespace BLL.Services
     public interface IOwnerService
     {
         Task<OwnerVM> GetOwner(int id);
-        Task<List<OwnerVM>> GetAllOwners(string fullName);
+        Task<List<OwnerVM>> GetAllOwners(string name, string sort, int? page, int length, string dir);
         //Task<List<OwnerVM>> GetAllOwners(GetAllOwnersFilterVM filter);
         Task<OwnerVM> CreateOwner(CreateOwnerVM body);
         Task<OwnerVM> DeleteOwner(int id);
@@ -59,16 +59,42 @@ namespace BLL.Services
             return viewmodel;
         }
 
-        public async Task<List<OwnerVM>> GetAllOwners(string fullName)
+        public async Task<List<OwnerVM>> GetAllOwners(string name, string sort, int? page, int length, string dir)
         {
             List<Owner> dbOwners = await _repo.GetAllOwners();
 
             IQueryable<Owner> query = dbOwners.AsQueryable();
 
-            if (!string.IsNullOrWhiteSpace(fullName))
+            // FILTEREN
+            if (!string.IsNullOrWhiteSpace(name))
             {
-                query = query.Where(x => (x.Voornaam.ToLower() + " " + x.Achternaam.ToLower()).Contains(fullName.ToLower()));
+                query = query.Where(x => (x.Voornaam.ToLower() + " " + x.Achternaam.ToLower()).Contains(name.ToLower()));
             }
+
+            // SORTEREN
+            if (!string.IsNullOrWhiteSpace(sort))
+            {
+                switch (sort)
+                {
+                    case "voornaam":
+                        if (dir == "asc")
+                            query = query.OrderBy(x => x.Voornaam);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(x => x.Voornaam);
+                        break;
+                    case "achternaam":
+                        if (dir == "asc")
+                            query = query.OrderBy(x => x.Achternaam);
+                        else if (dir == "desc")
+                            query = query.OrderByDescending(x => x.Achternaam);
+                        break;
+                }
+            }
+
+            // PAGING
+            if (page.HasValue)
+                query = query.Skip(page.Value * length);
+            query = query.Take(length);
 
             List<OwnerVM> viewmodel = _mapper.Map<List<OwnerVM>>(query.ToList());
             return viewmodel;

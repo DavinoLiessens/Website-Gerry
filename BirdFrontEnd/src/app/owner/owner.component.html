@@ -4,9 +4,11 @@
         [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
         <ng-template pTemplate="caption">
             <div class="p-d-flex">
-                <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="ClearFilters()"></button>
-                
-                    <input pInputText type="text" class="searchbar" [(ngModel)]="SearchName" placeholder="Zoek Eigenaar" />  
+                <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="ClearFilters()"></button>                
+                <span class="p-input-icon-left" style="margin-left: 20px;">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="Zoek Eigenaar" [(ngModel)]="SearchName" />
+                </span>   
                     <!-- <button pButton pRipple type="button" class="searchbar" style="margin-left: 5px;" label="Zoek" class="p-button-raised" (onclick)="SearchOwner()"></button> -->
                     
                     <div class="select-owners">
@@ -29,19 +31,19 @@
                 <th>
                     <div class="p-d-flex p-jc-between p-ai-center">
                         ID 
-                        <p-columnFilter type="text" field="id" display="menu"></p-columnFilter>
+                        <!-- <p-columnFilter type="text" field="id" display="menu"></p-columnFilter> -->
                     </div>
                 </th>
                 <th>
                     <div class="p-d-flex p-jc-between p-ai-center">
                         Voornaam
-                        <p-columnFilter type="text" field="firstname" display="menu"></p-columnFilter>
+                        <!-- <p-columnFilter type="text" field="firstname" display="menu" (onclick)="FilterFirstname()"></p-columnFilter>-->
                     </div>
                 </th>
                 <th>
                     <div class="p-d-flex p-jc-between p-ai-center">
                         Achternaam 
-                        <p-columnFilter type="text" field="lastname" display="menu"></p-columnFilter>
+                        <!-- <p-columnFilter type="text" field="lastname" display="menu"></p-columnFilter>-->
                     </div>
                 </th>  
                 <th>
@@ -63,7 +65,7 @@
                     <p>{{owner.achternaam}}</p>
                 </td>
                 <td>
-                    <button pButton pRipple type="button" label="Verwijder" class="p-button-danger" (click)="DeleteOwner(owner.id)"></button>
+                    <button pButton pRipple type="button" label="Verwijder" class="p-button-danger" style="margin-left: 65px;" (click)="DeleteOwner(owner.id)"></button>
                 </td>
             </tr>
         </ng-template>
