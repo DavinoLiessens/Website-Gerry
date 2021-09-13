@@ -11,7 +11,7 @@ export class ApiService {
   public noBirds: number = 10;
   public sortItemBirds: string = 'Alles';
   public searchnameBird: string = '';
-  public ringNumber: number;
+  public ringNumber: string;
   public kotNumber: number;
 
   // OWNER
@@ -91,7 +91,7 @@ export class ApiService {
 
 export interface Bird{
   id?: number;
-  ringnummer: number;
+  ringnummer: string;
   geslacht: string;
   soort: string;
   jaartal: number;
@@ -99,25 +99,32 @@ export interface Bird{
   ownerFullName: string;
   eigenaarID: number;
   eigenaar?: Owner;
+  kweker: string;
+  kleur: string;
 }
 
 export interface Owner{
   id?: number;
   voornaam: string;
   achternaam: string;
+  telefoon: string;
+  email: string;
 }
 
 export interface CreateBird{
-  ringnummer: number;
+  ringnummer: string;
   geslacht: string;
   soort: string;
   jaartal: number;
   kotnummer: number;
   eigenaarID: number;
+  kweker: string;
+  kleur: string;
 }
 
 export interface ChangeBird {
-  ringnummer: number;
+  ringnummer: string;
   kotnummer: number;
   eigenaarID: number;
+  kweker: string;   
 }
