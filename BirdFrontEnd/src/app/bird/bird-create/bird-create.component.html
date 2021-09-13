@@ -1,5 +1,5 @@
 <p-panel header="Nieuwe Vogel Aanmaken: " style="float:left; width: 350px; margin-left: 2%; margin-top: 2%;">
-    <div><p class="p-text">Ringnummer: </p><input pInputText type="number" class="inputfield" placeholder="Ringnummer..." [(ngModel)]="Ringnummer" /></div><br><br><br>
+        <div><p class="p-text">Ringnummer: </p><input pInputText type="text" class="inputfield" placeholder="Ringnummer..." [(ngModel)]="Ringnummer" /></div><br><br><br>
         <div><p class="p-text" style="margin-left: 29px;">Geslacht: </p>
             <select [(ngModel)]="Geslacht" required class="inputfield" style="width: 195px; height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
                 <option *ngFor="let item of GeslachtOptions">{{item}}</option>
@@ -10,11 +10,18 @@
                 <option *ngFor="let item of typeOfBirdOptions">{{item}}</option>
             </select>
         </div><br><br><br>
+        <div><p class="p-text" style="margin-left: 50px;">Kleur: </p>
+            <select [(ngModel)]="Kleur" required class="inputfield" style="width: 195px; height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                <option *ngFor="let item of colorOptions">{{item}}</option>
+            </select>
+        </div><br><br><br>
         <div><p class="p-text" style="margin-left: 43px;">Jaartal: </p><input pInputText type="number" class="inputfield" placeholder="Jaartal..." [(ngModel)]="Jaartal" /></div><br><br><br>
         <div><p class="p-text" style="margin-left: 10px;">Kotnummer: </p><input pInputText type="number" class="inputfield" placeholder="Kotnummer..." [(ngModel)]="Kotnummer" /></div><br><br><br>
-        <div><p class="p-text" style="margin-left: 30px;">Eigenaar: </p>
-            <select [(ngModel)]="EigenaarID" required class="inputfield" style="width: 195px; height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+        <div><p class="p-text" style="margin-left: 30px;">Kweker: </p>
+        <select [(ngModel)]="EigenaarID" required class="inputfield" size="1" style="width: 195px; height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
                 <option  *ngFor="let item of ownerOptions" [ngValue]="item.id">{{item.voornaam}} {{item.achternaam}}</option>
-            </select>    </div><br><br><br><br>
+            </select><br><br><br>
+        <div><p class="p-text" style="margin-left: 43px;">Eigenaar: </p><input pInputText type="text" class="inputfield" placeholder="Eigenaar..." [(ngModel)]="Kweker" /></div><br><br><br><br>
+        </div>
         <button pButton type="button" label="Opslaan" icon="pi pi-check" (click)="CreateBird()" class="inputfield" style="margin-top: -30px"></button>    
 </p-panel>

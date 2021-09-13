@@ -11,35 +11,40 @@ import { OwnerService } from 'src/app/Services/owner.service';
 export class BirdCreateComponent implements OnInit {
 
   private newBird: CreateBird;
-  private ringnummer: number;
+  private ringnummer: string;
   private geslacht: string;
   private soort: string;
   private jaartal: number;
   private kotnummer: number;
   private eigenaarID: number;
+  private kweker: string;
+  private kleur: string;
   
 
   public GeslachtOptions: string[];
   public typeOfBirdOptions: string[];
   public ownerOptions: Owner[];
-
-  // createbird methode nog afwerken met github vergelijken
-  // eerst ownerservice maken en GetAllOwners roepen voor ik verder kan doen
-  // ownerservice aanmaken en overerven van methodes uit api service
+  public colorOptions: string[];
   
   constructor(private apiService: ApiService, private ownerService: OwnerService, private router: Router) { }
 
   ngOnInit(): void {
     this.GeslachtOptions = ['Pop', 'Man'];
     this.typeOfBirdOptions = ['Kanarie', 'Goudvink', 'Vink', 'Parkiet', 'Papegaai', 'Mus', 'Distelvink', 'Roodborst'];
-    this.apiService.GetAllOwners().subscribe((res) => this.ownerOptions = res);
+    this.colorOptions = ['Geel', 'Rood', 'Bruin', 'Grijs', 'Zwart', 'Appelblauwzeegroen','Pastelbruin'];
+    this.apiService.noOwners = 100;
+    this.apiService.GetAllOwners().subscribe((res) => {
+      this.ownerOptions = res;
+      console.log(res);
+    this.apiService.noOwners = 10;
+    });
   }
 
   CreateBird() : void{
     this.ownerService.GetAllOwners().subscribe(result => {
 
       if(result.length == 0){
-        alert("This owner doesn't exist");
+        alert("Deze Kweker bestaat niet!");
         return;
       }
 
@@ -52,7 +57,9 @@ export class BirdCreateComponent implements OnInit {
          soort: this.soort,
          jaartal: this.jaartal,
          kotnummer: this.kotnummer,
-         eigenaarID: this.eigenaarID
+         eigenaarID: this.eigenaarID,
+         kweker: this.kweker,
+         kleur: this.kleur
       };
 
       this.apiService.CreateBird(this.newBird).subscribe(result => {
@@ -72,7 +79,7 @@ export class BirdCreateComponent implements OnInit {
     return this.ringnummer;
   }
 
-  set Ringnummer(value: number){
+  set Ringnummer(value: string){
     this.ringnummer = value;
   }
 
@@ -114,5 +121,21 @@ export class BirdCreateComponent implements OnInit {
 
   set EigenaarID(value: number){
     this.eigenaarID = value;
+  }
+
+  get Kweker(){
+    return this.kweker;
+  }
+
+  set Kweker(value: string){
+    this.kweker = value;
+  }
+
+  get Kleur(){
+    return this.kleur;
+  }
+
+  set Kleur(value: string){
+    this.kleur = value;
   }
 }
