@@ -11,6 +11,7 @@ namespace BLL.ViewModels
         //public string Soort { get; set; }
         //public int? Jaartal { get; set; }
         public int? Kotnummer { get; set; }
+        public string  Kweker { get; set; }
         public int? EigenaarID { get; set; }
     }
 }

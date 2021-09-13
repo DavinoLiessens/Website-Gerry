@@ -27,62 +27,86 @@ namespace BirdAPI
                 owner1 = new Owner()
                 {
                     Voornaam = "Davino",
-                    Achternaam = "Liessens"
+                    Achternaam = "Liessens",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
                 owner2 = new Owner()
                 {
                     Voornaam = "Gerry",
-                    Achternaam = "Liessens"
+                    Achternaam = "Liessens",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
                 owner3 = new Owner()
                 {
                     Voornaam = "Lolo",
-                    Achternaam = "Liessens"
+                    Achternaam = "Liessens",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
                 owner4 = new Owner()
                 {
                     Voornaam = "Laureanne",
-                    Achternaam = "Vanbellingen"
+                    Achternaam = "Vanbellingen",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
                 owner5 = new Owner()
                 {
                     Voornaam = "Nicole",
-                    Achternaam = "Vancraeybex"
+                    Achternaam = "Vancraeybex",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
                 owner6 = new Owner()
                 {
                     Voornaam = "Franky",
-                    Achternaam = "Liessens"
+                    Achternaam = "Liessens",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
                 owner7 = new Owner()
                 {
                     Voornaam = "Wilfried",
-                    Achternaam = "Liessens"
+                    Achternaam = "Liessens",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
                 owner8 = new Owner()
                 {
                     Voornaam = "Rudy",
-                    Achternaam = "Janssens"
+                    Achternaam = "Janssens",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
                 owner9 = new Owner()
                 {
                     Voornaam = "Eddy",
-                    Achternaam = "Liessens"
+                    Achternaam = "Liessens",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
                 owner10 = new Owner()
                 {
                     Voornaam = "Tom",
-                    Achternaam = "Van Grieken"
+                    Achternaam = "Van Grieken",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
                 owner11 = new Owner()
                 {
                     Voornaam = "Paul",
-                    Achternaam = "Janssens"
+                    Achternaam = "Janssens",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
                 owner12 = new Owner()
                 {
                     Voornaam = "Oby",
-                    Achternaam = "Liessens"
+                    Achternaam = "Liessens",
+                    Telefoon = "+32471300157",
+                    Email = "davino.liessens@hotmail.com"
                 };
 
                 // BIRDS
@@ -93,7 +117,9 @@ namespace BirdAPI
                     Soort = "Vink",
                     Jaartal = 2005,
                     Kotnummer = 7,
-                    Eigenaar = owner1
+                    Eigenaar = owner1,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird2 = new Bird()
                 {
@@ -102,7 +128,9 @@ namespace BirdAPI
                     Soort = "Goudvink",
                     Jaartal = 2021,
                     Kotnummer = 5,
-                    Eigenaar = owner2
+                    Eigenaar = owner2,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird3 = new Bird()
                 {
@@ -111,7 +139,9 @@ namespace BirdAPI
                     Soort = "Roodborst",
                     Jaartal = 2019,
                     Kotnummer = 2,
-                    Eigenaar = owner3
+                    Eigenaar = owner3,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird4 = new Bird()
                 {
@@ -120,7 +150,9 @@ namespace BirdAPI
                     Soort = "Goudvink",
                     Jaartal = 2019,
                     Kotnummer = 2,
-                    Eigenaar = owner6
+                    Eigenaar = owner6,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird5 = new Bird()
                 {
@@ -129,7 +161,9 @@ namespace BirdAPI
                     Soort = "Kanarie",
                     Jaartal = 2014,
                     Kotnummer = 6,
-                    Eigenaar = owner10
+                    Eigenaar = owner10,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird6 = new Bird()
                 {
@@ -138,7 +172,9 @@ namespace BirdAPI
                     Soort = "Kanarie",
                     Jaartal = 2020,
                     Kotnummer = 4,
-                    Eigenaar = owner8
+                    Eigenaar = owner8,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird7 = new Bird()
                 {
@@ -147,7 +183,9 @@ namespace BirdAPI
                     Soort = "Roodborst",
                     Jaartal = 2017,
                     Kotnummer = 3,
-                    Eigenaar = owner9
+                    Eigenaar = owner9,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird8 = new Bird()
                 {
@@ -156,7 +194,9 @@ namespace BirdAPI
                     Soort = "Papegaai",
                     Jaartal = 2009,
                     Kotnummer = 9,
-                    Eigenaar = owner12
+                    Eigenaar = owner12,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird9 = new Bird()
                 {
@@ -165,7 +205,9 @@ namespace BirdAPI
                     Soort = "Parkiet",
                     Jaartal = 2019,
                     Kotnummer = 5,
-                    Eigenaar = owner11
+                    Eigenaar = owner11,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird10 = new Bird()
                 {
@@ -174,7 +216,9 @@ namespace BirdAPI
                     Soort = "Parkiet",
                     Jaartal = 2019,
                     Kotnummer = 7,
-                    Eigenaar = owner1
+                    Eigenaar = owner1,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird11 = new Bird()
                 {
@@ -183,7 +227,9 @@ namespace BirdAPI
                     Soort = "Distelvink",
                     Jaartal = 2013,
                     Kotnummer = 3,
-                    Eigenaar = owner4
+                    Eigenaar = owner4,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird12 = new Bird()
                 {
@@ -192,7 +238,9 @@ namespace BirdAPI
                     Soort = "Roodborst",
                     Jaartal = 2018,
                     Kotnummer = 6,
-                    Eigenaar = owner6
+                    Eigenaar = owner6,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird13 = new Bird()
                 {
@@ -201,7 +249,9 @@ namespace BirdAPI
                     Soort = "Mus",
                     Jaartal = 2019,
                     Kotnummer = 1,
-                    Eigenaar = owner2
+                    Eigenaar = owner2,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird14 = new Bird()
                 {
@@ -210,7 +260,9 @@ namespace BirdAPI
                     Soort = "Papegaai",
                     Jaartal = 2019,
                     Kotnummer = 5,
-                    Eigenaar = owner10
+                    Eigenaar = owner10,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird15 = new Bird()
                 {
@@ -219,7 +271,9 @@ namespace BirdAPI
                     Soort = "Parkiet",
                     Jaartal = 2019,
                     Kotnummer = 3,
-                    Eigenaar = owner5
+                    Eigenaar = owner5,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird16 = new Bird()
                 {
@@ -228,7 +282,9 @@ namespace BirdAPI
                     Soort = "Mus",
                     Jaartal = 2019,
                     Kotnummer = 4,
-                    Eigenaar = owner7
+                    Eigenaar = owner7,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird17 = new Bird()
                 {
@@ -237,7 +293,9 @@ namespace BirdAPI
                     Soort = "Distelvink",
                     Jaartal = 2019,
                     Kotnummer = 4,
-                    Eigenaar = owner8
+                    Eigenaar = owner8,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird18 = new Bird()
                 {
@@ -246,7 +304,9 @@ namespace BirdAPI
                     Soort = "Vink",
                     Jaartal = 2019,
                     Kotnummer = 8,
-                    Eigenaar = owner4
+                    Eigenaar = owner4,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird19 = new Bird()
                 {
@@ -255,7 +315,9 @@ namespace BirdAPI
                     Soort = "Kanarie",
                     Jaartal = 2019,
                     Kotnummer = 8,
-                    Eigenaar = owner5
+                    Eigenaar = owner5,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
                 bird20 = new Bird()
                 {
@@ -264,7 +326,9 @@ namespace BirdAPI
                     Soort = "Parkiet",
                     Jaartal = 2020,
                     Kotnummer = 8,
-                    Eigenaar = owner9
+                    Eigenaar = owner9,
+                    Kleur = "Grijs",
+                    Kweker = "Davino Liessens"
                 };
 
                 // ADD BIRDS TO CONTEXT
