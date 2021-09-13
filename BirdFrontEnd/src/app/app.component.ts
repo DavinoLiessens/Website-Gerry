@@ -32,7 +32,7 @@ export class AppComponent {
         routerLink: '/owners'
     },
     {
-        label: 'Eigenaar Aanmaken',
+        label: 'Kweker Aanmaken',
         icon: 'pi pi-plus',
         routerLink: '/owners/create'
     }
