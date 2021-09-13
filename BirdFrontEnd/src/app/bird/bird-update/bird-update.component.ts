@@ -13,12 +13,14 @@ export class BirdUpdateComponent implements OnInit {
 
   @Input() bird: Bird;
 
-  private ringnummer: number;
+  private ringnummer: string;
   private geslacht: string;
   private soort: string;
   private jaartal: number;
   private kotnummer: number;
   private eigenaarID: number;
+  private kweker: string;
+  private kleur: string;
 
   public GeslachtOptions: string[];
   public typeOfBirdOptions: string[];
@@ -49,7 +51,8 @@ export class BirdUpdateComponent implements OnInit {
     let changeBirdVM: ChangeBird = {
       ringnummer: this.bird.ringnummer,
       kotnummer: this.bird.kotnummer,
-      eigenaarID: this.bird.eigenaarID
+      eigenaarID: this.bird.eigenaarID,
+      kweker: this.bird.kweker
     };
 
     console.log(changeBirdVM);
@@ -85,8 +88,8 @@ export class BirdUpdateComponent implements OnInit {
     return this.ringnummer;
   }
 
-  set Ringnummer(value: number) {
-    this.ringnummer = value;
+  set Ringnummer(value: string) {
+    this.ringnummer = value.toUpperCase();
   }
 
   get Geslacht() {
@@ -129,4 +132,19 @@ export class BirdUpdateComponent implements OnInit {
     this.eigenaarID = value;
   }
 
+  get Kweker(){
+    return this.kweker;
+  }
+
+  set Kweker(value: string){
+    this.kweker = value;
+  }
+
+  get Kleur(){
+    return this.kleur;
+  }
+
+  set Kleur(value: string){
+    this.kleur = value;
+  }
 }
