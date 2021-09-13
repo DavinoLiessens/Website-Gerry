@@ -13,6 +13,8 @@ export class OwnerCreateComponent implements OnInit {
   private newOwner: Owner;
   private voornaam: string;
   private achternaam: string;
+  private telefoon: string;
+  private email: string;
 
   constructor(private apiService: ApiService, private ownerService: OwnerService, private router: Router) { }
 
@@ -22,7 +24,9 @@ export class OwnerCreateComponent implements OnInit {
   CreateOwner() : void{
     this.newOwner = {
       voornaam: this.voornaam,
-      achternaam: this.achternaam
+      achternaam: this.achternaam,
+      telefoon: this.telefoon,
+      email: this.email
     };
 
     this.ownerService.CreateOwner(this.newOwner).subscribe(result => {
@@ -52,5 +56,19 @@ export class OwnerCreateComponent implements OnInit {
     this.achternaam = value;
   }
     
+  get Telefoon(){
+    return this.telefoon;
+  }
 
+  set Telefoon(value: string){
+    this.telefoon = value;
+  }
+
+  get Email(){
+    return this.email;
+  }
+
+  set Email(value: string){
+    this.email = value;
+  }
 }
