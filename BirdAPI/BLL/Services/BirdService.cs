@@ -13,7 +13,7 @@ namespace BLL.Services
     public interface IBirdService
     {
         Task<BirdVM> GetBird(int id);
-        Task<List<BirdVM>> GetAllBirds(string owner, string soort, int? kotnummer, int? ringnummer, string sort, int? page, int length = 10, string dir = "asc");
+        Task<List<BirdVM>> GetAllBirds(string owner, string soort, int? kotnummer, string ringnummer, string sort, int? page, int length = 10, string dir = "asc");
         Task<BirdVM> CreateBird(CreateBirdVM body);
         Task<BirdVM> DeleteBird(int id);
         Task<BirdVM> ChangeBird(int id, ChangeBirdVM body);
@@ -35,7 +35,7 @@ namespace BLL.Services
             Bird bird = await _repo.GetBird(id);
 
             if (body.Ringnummer != null)
-                bird.Ringnummer = body.Ringnummer.Value;
+                bird.Ringnummer = body.Ringnummer.ToString();
             if (body.Kotnummer != null)
                 bird.Kotnummer = body.Kotnummer.Value;
             {
@@ -49,9 +49,11 @@ namespace BLL.Services
             if (body.EigenaarID != null)
             {
                 bird.EigenaarID = body.EigenaarID.Value;
-                //string[] names = body.OwnerFullName.Split(' '); // ********** Wat als de achternaam meerdere delen heeft??? *****
-                //bird.Eigenaar.Voornaam = names[0];
-                //bird.Eigenaar.Achternaam = names[1];
+            }
+
+            if (body.Kweker != null)
+            {
+                bird.Kweker = body.Kweker.ToString();
             }
 
             bird = await _repo.ChangeBird(bird);
@@ -79,7 +81,7 @@ namespace BLL.Services
             return viewmodel;
         }
 
-        public async Task<List<BirdVM>> GetAllBirds(string owner, string soort, int? kotnummer, int? ringnummer, string sort, int? page, int length = 10, string dir = "asc")
+        public async Task<List<BirdVM>> GetAllBirds(string owner, string soort, int? kotnummer, string ringnummer, string sort, int? page, int length = 10, string dir = "asc")
         {
             List<Bird> birds = await _repo.GetAllBirds();
 
@@ -100,7 +102,7 @@ namespace BLL.Services
                 query = query.Where(x => x.Kotnummer == kotnummer);
             }
 
-            if(ringnummer != null)
+            if(!string.IsNullOrWhiteSpace(ringnummer))
             {
                 query = query.Where(x => x.Ringnummer == ringnummer);
             }

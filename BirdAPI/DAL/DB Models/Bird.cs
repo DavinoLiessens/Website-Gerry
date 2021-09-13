@@ -9,7 +9,7 @@ namespace DAL.DB_Models
         public int ID { get; set; }
 
         [Required]
-        public int Ringnummer { get; set; }
+        public string Ringnummer { get; set; }
         [Required]
         public string Geslacht { get; set; }
         [Required]

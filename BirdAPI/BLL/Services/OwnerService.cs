@@ -13,7 +13,7 @@ namespace BLL.Services
     public interface IOwnerService
     {
         Task<OwnerVM> GetOwner(int id);
-        Task<List<OwnerVM>> GetAllOwners(string name, string sort, int? page, int length, string dir);
+        Task<List<OwnerVM>> GetAllOwners(string name, string sort, int? page, int length = 20, string dir = "asc");
         //Task<List<OwnerVM>> GetAllOwners(GetAllOwnersFilterVM filter);
         Task<OwnerVM> CreateOwner(CreateOwnerVM body);
         Task<OwnerVM> DeleteOwner(int id);

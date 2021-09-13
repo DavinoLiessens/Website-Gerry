@@ -112,7 +112,7 @@ namespace BirdAPI
                 // BIRDS
                 bird1 = new Bird()
                 {
-                    Ringnummer = 1003456,
+                    Ringnummer = "1003456",
                     Geslacht = "Pop",
                     Soort = "Vink",
                     Jaartal = 2005,
@@ -123,7 +123,7 @@ namespace BirdAPI
                 };
                 bird2 = new Bird()
                 {
-                    Ringnummer = 1234456,
+                    Ringnummer = "1234456",
                     Geslacht = "Man",
                     Soort = "Goudvink",
                     Jaartal = 2021,
@@ -134,7 +134,7 @@ namespace BirdAPI
                 };
                 bird3 = new Bird()
                 {
-                    Ringnummer = 1004789,
+                    Ringnummer = "1004789",
                     Geslacht = "Man",
                     Soort = "Roodborst",
                     Jaartal = 2019,
@@ -145,7 +145,7 @@ namespace BirdAPI
                 };
                 bird4 = new Bird()
                 {
-                    Ringnummer = 1257604,
+                    Ringnummer = "1257604",
                     Geslacht = "Man",
                     Soort = "Goudvink",
                     Jaartal = 2019,
@@ -156,7 +156,7 @@ namespace BirdAPI
                 };
                 bird5 = new Bird()
                 {
-                    Ringnummer = 1789654,
+                    Ringnummer = "1789654",
                     Geslacht = "Man",
                     Soort = "Kanarie",
                     Jaartal = 2014,
@@ -167,7 +167,7 @@ namespace BirdAPI
                 };
                 bird6 = new Bird()
                 {
-                    Ringnummer = 3457810,
+                    Ringnummer = "3457810",
                     Geslacht = "Pop",
                     Soort = "Kanarie",
                     Jaartal = 2020,
@@ -178,7 +178,7 @@ namespace BirdAPI
                 };
                 bird7 = new Bird()
                 {
-                    Ringnummer = 7891456,
+                    Ringnummer = "7891456",
                     Geslacht = "Man",
                     Soort = "Roodborst",
                     Jaartal = 2017,
@@ -189,7 +189,7 @@ namespace BirdAPI
                 };
                 bird8 = new Bird()
                 {
-                    Ringnummer = 9874210,
+                    Ringnummer = "9874210",
                     Geslacht = "Pop",
                     Soort = "Papegaai",
                     Jaartal = 2009,
@@ -200,7 +200,7 @@ namespace BirdAPI
                 };
                 bird9 = new Bird()
                 {
-                    Ringnummer = 4781230,
+                    Ringnummer = "4781230",
                     Geslacht = "Man",
                     Soort = "Parkiet",
                     Jaartal = 2019,
@@ -211,7 +211,7 @@ namespace BirdAPI
                 };
                 bird10 = new Bird()
                 {
-                    Ringnummer = 6145789,
+                    Ringnummer = "6145789",
                     Geslacht = "Man",
                     Soort = "Parkiet",
                     Jaartal = 2019,
@@ -222,7 +222,7 @@ namespace BirdAPI
                 };
                 bird11 = new Bird()
                 {
-                    Ringnummer = 5426798,
+                    Ringnummer = "5426798",
                     Geslacht = "Man",
                     Soort = "Distelvink",
                     Jaartal = 2013,
@@ -233,7 +233,7 @@ namespace BirdAPI
                 };
                 bird12 = new Bird()
                 {
-                    Ringnummer = 8885471,
+                    Ringnummer = "8885471",
                     Geslacht = "Pop",
                     Soort = "Roodborst",
                     Jaartal = 2018,
@@ -244,7 +244,7 @@ namespace BirdAPI
                 };
                 bird13 = new Bird()
                 {
-                    Ringnummer = 6678451,
+                    Ringnummer = "6678451",
                     Geslacht = "Pop",
                     Soort = "Mus",
                     Jaartal = 2019,
@@ -255,7 +255,7 @@ namespace BirdAPI
                 };
                 bird14 = new Bird()
                 {
-                    Ringnummer = 3347899,
+                    Ringnummer = "3347899",
                     Geslacht = "Man",
                     Soort = "Papegaai",
                     Jaartal = 2019,
@@ -266,7 +266,7 @@ namespace BirdAPI
                 };
                 bird15 = new Bird()
                 {
-                    Ringnummer = 2014578,
+                    Ringnummer = "2014578",
                     Geslacht = "Man",
                     Soort = "Parkiet",
                     Jaartal = 2019,
@@ -277,7 +277,7 @@ namespace BirdAPI
                 };
                 bird16 = new Bird()
                 {
-                    Ringnummer = 3478520,
+                    Ringnummer = "3478520",
                     Geslacht = "Man",
                     Soort = "Mus",
                     Jaartal = 2019,
@@ -288,7 +288,7 @@ namespace BirdAPI
                 };
                 bird17 = new Bird()
                 {
-                    Ringnummer = 9462057,
+                    Ringnummer = "9462057",
                     Geslacht = "Man",
                     Soort = "Distelvink",
                     Jaartal = 2019,
@@ -299,7 +299,7 @@ namespace BirdAPI
                 };
                 bird18 = new Bird()
                 {
-                    Ringnummer = 6704132,
+                    Ringnummer = "6704132",
                     Geslacht = "Man",
                     Soort = "Vink",
                     Jaartal = 2019,
@@ -310,7 +310,7 @@ namespace BirdAPI
                 };
                 bird19 = new Bird()
                 {
-                    Ringnummer = 1603478,
+                    Ringnummer = "1603478",
                     Geslacht = "Man",
                     Soort = "Kanarie",
                     Jaartal = 2019,
@@ -321,7 +321,7 @@ namespace BirdAPI
                 };
                 bird20 = new Bird()
                 {
-                    Ringnummer = 4567308,
+                    Ringnummer = "4567308",
                     Geslacht = "Man",
                     Soort = "Parkiet",
                     Jaartal = 2020,
