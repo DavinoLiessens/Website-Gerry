@@ -42,7 +42,7 @@ export class BirdComponent implements OnInit {
         });
       }
       else{
-        console.log("Het item is niet verwijderd!");
+        alert("Het item is niet verwijderd!");
       }
       
     }

@@ -32,9 +32,14 @@ export class OwnerComponent implements OnInit {
   }
 
   DeleteOwner(id: number){
-    this.ownerService.DeleteOwner(id).subscribe(result => {
-      this.GetAllOwners();
-    });
+    if(confirm("Ben je zeker dat je dit item wilt verwijderen?")){
+      this.ownerService.DeleteOwner(id).subscribe(result => {
+        this.GetAllOwners();
+      });
+    }
+    else{
+      alert("Het item is niet verwijderd!");
+    }
   }
 
   get SearchName() {
