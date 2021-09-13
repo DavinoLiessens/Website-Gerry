@@ -8,7 +8,7 @@
                 <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="ClearFilters()"></button>  
                 <span class="p-input-icon-left" style="margin-left: 20px;">
                     <i class="pi pi-search"></i>
-                    <input type="text" pInputText placeholder="Zoek Eigenaar" [(ngModel)]="SearchName" />
+                    <input type="text" pInputText placeholder="Zoek Kweker" [(ngModel)]="SearchName" />
                 </span>   
                 <span class="p-input-icon-left" style="margin-left: 20px;">
                     <i class="pi pi-search"></i>
@@ -45,6 +45,12 @@
                 </th>
                 <th>
                     <div class="p-d-flex p-jc-between p-ai-center">
+                        Kweker 
+                        <!--<p-columnFilter type="text" field="owner" matchMode="in" display="menu"></p-columnFilter>-->
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
                         Eigenaar 
                         <!--<p-columnFilter type="text" field="owner" matchMode="in" display="menu"></p-columnFilter>-->
                     </div>
@@ -57,7 +63,7 @@
                 </th>
                 <th>
                     <div class="p-d-flex p-jc-between p-ai-center">
-                        Ringnummer 
+                        Ringnummer
                         <!-- <p-columnFilter type="numeric" field="ringnumber" display="menu"></p-columnFilter>-->
                     </div>
                 </th>                
@@ -65,6 +71,12 @@
                     <div class="p-d-flex p-jc-between p-ai-center">
                         Soort
                         <!-- <p-columnFilter type="text" field="typeOfBird" display="menu"></p-columnFilter> -->
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Kleur 
+                        <!--<p-columnFilter type="text" field="owner" matchMode="in" display="menu"></p-columnFilter>-->
                     </div>
                 </th>
                 <th>
@@ -100,6 +112,9 @@
                     <p>{{bird.eigenaar.voornaam}} {{bird.eigenaar.achternaam}}</p>
                 </td>
                 <td>
+                    <p>{{bird.kweker}}</p>
+                </td>
+                <td>
                     <p>{{bird.geslacht}}</p>
                 </td>
                 <td>
@@ -107,6 +122,9 @@
                 </td>
                 <td>
                     <p>{{bird.soort}}</p>
+                </td>
+                <td>
+                    <p>{{bird.kleur}}</p>
                 </td>
                 <td>
                     <p>{{bird.jaartal}}</p>

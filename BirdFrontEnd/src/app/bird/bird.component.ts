@@ -15,7 +15,7 @@ export class BirdComponent implements OnInit {
 
     constructor(private birdService: BirdService, private apiService: ApiService) { 
       this.items = [5,10,15,20,25,50,100];
-      this.sortItems = ["Alles", "Eigenaar", "Ringnummer", "Kotnummer", "Soort"];
+      this.sortItems = ["Alles", "Kweker", "Ringnummer", "Kotnummer", "Soort"];
     }
 
     ngOnInit() {
@@ -36,9 +36,15 @@ export class BirdComponent implements OnInit {
     }
 
     DeleteBird(id: number){
-      this.birdService.DeleteBird(id).subscribe(result => {
-        this.GetAllBirds();
-      });
+      if(confirm("Ben je zeker dat je dit item wilt verwijderen?")){
+        this.birdService.DeleteBird(id).subscribe(result => {
+          this.GetAllBirds();
+        });
+      }
+      else{
+        console.log("Het item is niet verwijderd!");
+      }
+      
     }
 
     get SearchName() {
@@ -75,6 +81,9 @@ export class BirdComponent implements OnInit {
       if(value == "Alles"){
         this.apiService.sortItemBirds = '';
       }
+      else if(value == "Kweker"){
+        this.apiService.sortItemBirds = 'eigenaar';
+      }
       else{
         this.apiService.sortItemBirds = value.toLocaleLowerCase();
       }
@@ -92,7 +101,7 @@ export class BirdComponent implements OnInit {
       return this.apiService.ringNumber;
     }
 
-    set RingNumber(value: number){
+    set RingNumber(value: string){
       this.apiService.ringNumber = value;
 
       this.apiService.GetAllBirdsWithRingNumber().subscribe(result => {
