@@ -56,6 +56,11 @@ namespace BLL.Services
                 bird.Kweker = body.Kweker.ToString();
             }
 
+            if(body.Omschrijving != null)
+            {
+                bird.Omschrijving = body.Omschrijving.ToString();
+            }
+
             bird = await _repo.ChangeBird(bird);
             BirdVM viewmodel = _mapper.Map<BirdVM>(bird);
             //viewmodel.OwnerFullName = $"{bird.Eigenaar.Voornaam} {bird.Eigenaar.Achternaam}";

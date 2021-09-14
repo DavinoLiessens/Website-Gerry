@@ -17,6 +17,8 @@ namespace BLL.ViewModels
         public string Kweker { get; set; }
         public int EigenaarID { get; set; }
         public OwnerVM Eigenaar { get; set; }
+
+        public string Omschrijving { get; set; }
         // public string OwnerFullName { get; set; }
     }
 }

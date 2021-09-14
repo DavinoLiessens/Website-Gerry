@@ -26,5 +26,8 @@ namespace DAL.DB_Models
         public int EigenaarID { get; set; }
         [Required]
         public Owner Eigenaar { get; set; }
+
+        [StringLength(200)]
+        public string Omschrijving { get; set; }
     }
 }
