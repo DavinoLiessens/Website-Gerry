@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { PanelModule } from 'primeng/panel';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 // *** COMPONENTS ***
 import { AppComponent } from './app.component';
@@ -52,7 +53,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FormsModule,
     InputTextModule,
     DropdownModule,
-    PanelModule
+    PanelModule,
+    InputTextareaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

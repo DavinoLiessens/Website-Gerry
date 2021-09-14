@@ -21,6 +21,7 @@ export class BirdUpdateComponent implements OnInit {
   private eigenaarID: number;
   private kweker: string;
   private kleur: string;
+  private omschrijving: string;
 
   public GeslachtOptions: string[];
   public typeOfBirdOptions: string[];
@@ -52,7 +53,8 @@ export class BirdUpdateComponent implements OnInit {
       ringnummer: this.bird.ringnummer,
       kotnummer: this.bird.kotnummer,
       eigenaarID: this.bird.eigenaarID,
-      kweker: this.bird.kweker
+      kweker: this.bird.kweker,
+      omschrijving: this.bird.omschrijving
     };
 
     console.log(changeBirdVM);
@@ -146,5 +148,13 @@ export class BirdUpdateComponent implements OnInit {
 
   set Kleur(value: string){
     this.kleur = value;
+  }
+
+  get Omschrijving(){
+    return this.omschrijving;
+  }
+
+  set Omschrijving(value: string){
+    this.omschrijving = value;
   }
 }

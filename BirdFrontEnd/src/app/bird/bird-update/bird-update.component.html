@@ -13,5 +13,6 @@
                 <option  *ngFor="let item of ownerOptions" [ngValue]="item.id">{{item.voornaam}} {{item.achternaam}}</option>
             </select></div><br><br><br>
             <div><p class="p-text" style="margin-left: 30px;">Kweker: </p><input pInputText type="text" class="inputfield" placeholder="{{bird.kweker}}" [(ngModel)]="bird.kweker" /></div><br><br><br><br>
+            <div><p class="p-text" style="margin-left: -5px; margin-top: -1px;">Omschrijving: </p><textarea pInputTextarea [(ngModel)]="bird.omschrijving" [rows]="1" [cols]="30" autoResize="autoResize" class="textarea-content" placeholder="{{bird.omschrijving}}"></textarea></div><br><br><br><br>
         <button pButton type="button" label="Opslaan" icon="pi pi-check" (click)="SaveBird()" class="inputfield" style="margin-top: -30px"></button>    
 </p-panel>

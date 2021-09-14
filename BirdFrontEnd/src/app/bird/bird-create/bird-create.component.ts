@@ -19,7 +19,7 @@ export class BirdCreateComponent implements OnInit {
   private eigenaarID: number;
   private kweker: string;
   private kleur: string;
-  
+  private omschrijving: string;
 
   public GeslachtOptions: string[];
   public typeOfBirdOptions: string[];
@@ -59,7 +59,8 @@ export class BirdCreateComponent implements OnInit {
          kotnummer: this.kotnummer,
          eigenaarID: this.eigenaarID,
          kweker: this.kweker,
-         kleur: this.kleur
+         kleur: this.kleur,
+         omschrijving: this.omschrijving
       };
 
       this.apiService.CreateBird(this.newBird).subscribe(result => {
@@ -137,5 +138,13 @@ export class BirdCreateComponent implements OnInit {
 
   set Kleur(value: string){
     this.kleur = value;
+  }
+
+  get Omschrijving(){
+    return this.omschrijving;
+  }
+
+  set Omschrijving(value: string){
+    this.omschrijving = value;
   }
 }

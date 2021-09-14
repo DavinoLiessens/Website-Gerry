@@ -16,12 +16,13 @@
             </select>
         </div><br><br><br>
         <div><p class="p-text" style="margin-left: 43px;">Jaartal: </p><input pInputText type="number" class="inputfield" placeholder="Jaartal..." [(ngModel)]="Jaartal" /></div><br><br><br>
-        <div><p class="p-text" style="margin-left: 10px;">Kotnummer: </p><input pInputText type="number" class="inputfield" placeholder="Kotnummer..." [(ngModel)]="Kotnummer" /></div><br><br><br>
-        <div><p class="p-text" style="margin-left: 30px;">Kweker: </p>
+        <div><p class="p-text" style="margin-left: 6px;">Kotnummer: </p><input pInputText type="number" class="inputfield" placeholder="Kotnummer..." [(ngModel)]="Kotnummer" /></div><br><br><br>
+        <div><p class="p-text" style="margin-left: 37px;">Kweker: </p>
         <select [(ngModel)]="EigenaarID" required class="inputfield" size="1" style="width: 195px; height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
                 <option  *ngFor="let item of ownerOptions" [ngValue]="item.id">{{item.voornaam}} {{item.achternaam}}</option>
             </select><br><br><br>
-        <div><p class="p-text" style="margin-left: 43px;">Eigenaar: </p><input pInputText type="text" class="inputfield" placeholder="Eigenaar..." [(ngModel)]="Kweker" /></div><br><br><br><br>
-        </div>
+        <div><p class="p-text" style="margin-left: 28px;">Eigenaar: </p><input pInputText type="text" class="inputfield" placeholder="Eigenaar..." [(ngModel)]="Kweker" /></div><br><br><br><br>
+        <div><p class="p-text" style="margin-left: -5px; margin-top: -1px;">Omschrijving: </p><textarea pInputTextarea [(ngModel)]="Omschrijving" class="textarea-content" [rows]="1" [cols]="30" autoResize="autoResize" placeholder="Omschrijving..."></textarea></div><br><br><br><br>
+    </div>
         <button pButton type="button" label="Opslaan" icon="pi pi-check" (click)="CreateBird()" class="inputfield" style="margin-top: -30px"></button>    
 </p-panel>
