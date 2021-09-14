@@ -101,6 +101,7 @@ export interface Bird{
   eigenaar?: Owner;
   kweker: string;
   kleur: string;
+  omschrijving: string;
 }
 
 export interface Owner{
@@ -120,11 +121,13 @@ export interface CreateBird{
   eigenaarID: number;
   kweker: string;
   kleur: string;
+  omschrijving: string;
 }
 
 export interface ChangeBird {
   ringnummer: string;
   kotnummer: number;
   eigenaarID: number;
-  kweker: string;   
+  kweker: string;  
+  omschrijving: string; 
 }
