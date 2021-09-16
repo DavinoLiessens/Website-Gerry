@@ -26,3 +26,12 @@
     </div>
         <button pButton type="button" label="Opslaan" icon="pi pi-check" (click)="CreateBird()" class="inputfield" style="margin-top: -30px"></button>    
 </p-panel>
+
+<p-dropdown [options]="groupedColors" [(ngModel)]="Kleur" placeholder="Selecteer een kleur" [group]="true">
+    <ng-template let-group pTemplate="group">
+        <div class="p-d-flex p-ai-center">
+            <img src="../../../assets/{{group.label}}.jpg" style="width: 25px"/>
+            <span style="font-size: 22px;">{{group.label}}</span>
+        </div>
+    </ng-template>
+</p-dropdown>
