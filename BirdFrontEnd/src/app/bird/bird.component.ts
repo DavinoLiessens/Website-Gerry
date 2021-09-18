@@ -44,7 +44,6 @@ export class BirdComponent implements OnInit {
       else{
         alert("Het item is niet verwijderd!");
       }
-      
     }
 
     get SearchName() {

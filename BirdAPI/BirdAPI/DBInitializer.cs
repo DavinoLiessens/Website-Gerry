@@ -12,7 +12,7 @@ namespace BirdAPI
         public static void Initialize(AppDbContext context)
         {
             // database terug leegmaken als we opnieuw opstarten
-            context.Database.EnsureDeleted();
+            //context.Database.EnsureDeleted();
 
             // database aanmaken als er geen bestaat
             context.Database.EnsureCreated();
