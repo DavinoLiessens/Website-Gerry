@@ -26,6 +26,7 @@ import { OwnerDetailComponent } from './owner/owner-detail/owner-detail.componen
 import { OwnerCreateComponent } from './owner/owner-create/owner-create.component';
 import { OwnerUpdateComponent } from './owner/owner-update/owner-update.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CoupleComponent } from './couple/couple.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     OwnerDetailComponent,
     OwnerCreateComponent,
     OwnerUpdateComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CoupleComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     VirtualScrollerModule,
     FormsModule,
     InputTextModule,
-    DropdownModule,
+    DropdownModule, 
     PanelModule,
     InputTextareaModule
   ],

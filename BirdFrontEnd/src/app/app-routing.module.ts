@@ -4,6 +4,7 @@ import { BirdCreateComponent } from './bird/bird-create/bird-create.component';
 import { BirdDetailComponent } from './bird/bird-detail/bird-detail.component';
 import { BirdUpdateComponent } from './bird/bird-update/bird-update.component';
 import { BirdComponent } from './bird/bird.component';
+import { CoupleComponent } from './couple/couple.component';
 import { OwnerCreateComponent } from './owner/owner-create/owner-create.component';
 import { OwnerDetailComponent } from './owner/owner-detail/owner-detail.component';
 import { OwnerUpdateComponent } from './owner/owner-update/owner-update.component';
@@ -24,7 +25,7 @@ const routes: Routes = [
   {path: "owners/:id", component: OwnerDetailComponent},
 
   // COUPLE
-  {path: "couples", component: PageNotFoundComponent},
+  {path: "couples", component: CoupleComponent},
   
   // PAGE NOT FOUND
   {path: "*", component: PageNotFoundComponent},
