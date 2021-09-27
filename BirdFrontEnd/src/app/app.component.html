@@ -2,14 +2,14 @@
     <div class="p-toolbar-group-left">
         <!-- <p-button label="" icon="pi pi-plus"></p-button> -->            
         <i class="pi pi-bars"></i>        
-        <p-splitButton label="Vogels" [model]="birdItems" class="button-bird" ></p-splitButton>
-        <p-splitButton label="Kwekers" [model]="ownerItems" class="button-owner"></p-splitButton>
-        <p-button label="Koppels" class="button-couples" [routerLink]="['/couples']"></p-button>
+        <p-splitButton label="Vogels" [model]="birdItems" class="button-toolbar" ></p-splitButton>
+        <p-splitButton label="Kwekers" [model]="ownerItems" class="button-toolbar"></p-splitButton>
+        <p-splitButton label="Koppels" [model]="coupleItems" class="button-toolbar"></p-splitButton>
         <!-- <button pButton label="404" class="p-button-outlined" [routerLink]="['/page404']"></button> -->
     </div>
     
     <div class="p-toolbar-group-right">
-        <p-button label="Uitloggen" icon="pi pi-sign-out"></p-button>
+        <p-button label="Uitloggen" icon="pi pi-sign-out" [routerLink]="['/signout']"></p-button>
     </div>
 </p-toolbar>
 

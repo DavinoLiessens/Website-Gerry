@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TreeNode } from 'primeng/api';
-import { Bird } from 'src/app/Services/api.service';
+import { ApiService, Bird, Couple } from 'src/app/Services/api.service';
 import { BirdService } from 'src/app/Services/bird.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { BirdService } from 'src/app/Services/bird.service';
 export class CoupleCreateComponent implements OnInit {
 
   // init private variables
+  private newCouple: Couple;
   private couplename: string;  
   private parentLeft: string;
   private parentRight: string;
@@ -28,7 +30,7 @@ export class CoupleCreateComponent implements OnInit {
   // create array to show only the ringnumbers of the birds
   ringnumbers: string[];
 
-  constructor(private birdService: BirdService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.GetAllBirds();
@@ -72,7 +74,7 @@ export class CoupleCreateComponent implements OnInit {
 
   GetAllBirds(){
     try{
-      this.birdService.GetAllBirds().subscribe((res) => {
+      this.apiService.GetAllBirds().subscribe((res) => {
         this.birds = res;
         console.log(this.birds);
       });
@@ -80,13 +82,36 @@ export class CoupleCreateComponent implements OnInit {
     }
     catch{
       alert("Er was een probleem bij het ophalen van alle vogels!");
-      console.error();
-      
+      console.error();      
     }
   }
 
   CreateTree() : void{
+    // create new Couple object
+    this.newCouple = {
+      name: this.couplename,
+      father: this.parentLeft,
+      mother: this.parentRight,
+      child1: this.childLeft1,
+      child2: this.childLeft2,
+      child3: this.childLeft3,
+      child4: this.childRight1,
+      child5: this.childRight2,
+      child6: this.childRight3
+    };   
 
+    try{
+      this.apiService.CreateCouple(this.newCouple).subscribe((res) => {
+        alert("Stamboom succesvol aangemaakt!");
+        console.log(this.newCouple);
+        this.router.navigate(['/couples']);
+      });
+      
+    }
+    catch{
+      alert("Er was een probleem bij het ophalen van alle stambomen!");
+      console.error();      
+    }
   }
 
   get CoupleName(){

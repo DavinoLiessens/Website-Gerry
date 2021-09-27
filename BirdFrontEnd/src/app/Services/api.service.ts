@@ -19,12 +19,6 @@ export class ApiService {
   public sortItemOwners: string = 'Alles';
   public searchnameOwner: string = '';
 
-  // COUPLES
-  // TODO
-  //
-  //
-  //
-
   constructor(private _http: HttpClient) { }
 
   // ***** BIRD CALLS *****
@@ -93,6 +87,27 @@ export class ApiService {
     console.log(id);
     return this._http.delete<Owner>(`http://localhost:4000/api/v1/owners/${id}`);
   }  
+
+  // ***** COUPLE CALLS *****
+  GetAllCouples() {
+    return this._http.get<Couple[]>(`http://localhost:4000/api/v1/couples`);
+  }
+
+  GetCouple(id: number) {
+    return this._http.get<Couple>(`http://localhost:4000/api/v1/couples/${id}`);
+  }
+
+  CreateCouple(newCouple: Couple) {
+    return this._http.post<Couple>(`http://localhost:4000/api/v1/couples`, newCouple, {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    });
+  }
+
+  DeleteCouple(id: number) {
+    return this._http.delete<Couple>(`http://localhost:4000/api/v1/couples/${id}`);
+  }  
 }
 
 export interface Bird{
@@ -136,4 +151,17 @@ export interface ChangeBird {
   eigenaarID: number;
   kweker: string;  
   omschrijving: string; 
+}
+
+export interface Couple{
+  id?: number;
+  name: string;
+  father: string;
+  mother: string;
+  child1: string;
+  child2: string;
+  child3: string;
+  child4: string;
+  child5: string;
+  child6: string;
 }

@@ -133,9 +133,9 @@ namespace BirdAPI
                     Soort = "Vink",
                     Jaartal = 2005,
                     Kotnummer = 7,
-                    Eigenaar = owner1,
+                    Eigenaar = owner2,
                     Kleur = "Grijs",
-                    Kweker = "Davino Liessens",
+                    Kweker = "Gerry Liessens",
                     Omschrijving = ""
                 };
                 {

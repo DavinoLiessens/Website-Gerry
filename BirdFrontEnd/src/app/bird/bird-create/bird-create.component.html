@@ -72,7 +72,8 @@
         <div><p class="p-text" style="margin-left: 28px;">Eigenaar: </p><input pInputText type="text" class="inputfield" placeholder="Eigenaar..." [(ngModel)]="Kweker" /></div><br><br><br><br>
         <div><p class="p-text" style="margin-left: -5px; margin-top: -1px;">Omschrijving: </p><textarea pInputTextarea [(ngModel)]="Omschrijving" class="textarea-content" [rows]="1" [cols]="30" autoResize="autoResize" placeholder="Omschrijving..."></textarea></div><br><br><br>
         </div>
-    </div>    
-    <button pButton type="button" label="Opslaan" icon="pi pi-check" (click)="CreateBird()"></button>    
+    </div>   
+    <button pButton type="button" label="Terug" icon="pi pi-undo" style="margin-top: 320px; margin-left: -320px;" [routerLink]="['/birds']"></button> 
+    <button pButton type="button" label="Opslaan" icon="pi pi-check" class="button-save" (click)="CreateBird()"></button>    
 </p-panel>
 </body>

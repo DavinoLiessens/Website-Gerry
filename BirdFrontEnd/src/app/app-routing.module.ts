@@ -30,6 +30,7 @@ const routes: Routes = [
   {path: "couples/create", component: CoupleCreateComponent},
   
   // PAGE NOT FOUND
+  {path: "signout", component: PageNotFoundComponent},
   {path: "*", component: PageNotFoundComponent},
 
   // OTHER  
