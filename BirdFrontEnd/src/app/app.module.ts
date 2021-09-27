@@ -14,6 +14,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import { PanelModule } from 'primeng/panel';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { OrganizationChartModule } from 'primeng/organizationchart';
 
 // *** COMPONENTS ***
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { OwnerCreateComponent } from './owner/owner-create/owner-create.componen
 import { OwnerUpdateComponent } from './owner/owner-update/owner-update.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CoupleComponent } from './couple/couple.component';
+import { CoupleCreateComponent } from './couple/couple-create/couple-create.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,8 @@ import { CoupleComponent } from './couple/couple.component';
     OwnerCreateComponent,
     OwnerUpdateComponent,
     PageNotFoundComponent,
-    CoupleComponent
+    CoupleComponent,
+    CoupleCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { CoupleComponent } from './couple/couple.component';
     InputTextModule,
     DropdownModule, 
     PanelModule,
-    InputTextareaModule
+    InputTextareaModule,
+    OrganizationChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

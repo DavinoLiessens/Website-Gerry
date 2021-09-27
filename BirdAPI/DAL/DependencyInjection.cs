@@ -13,6 +13,7 @@ namespace DAL
         {
             services.AddTransient<IBirdRepository, BirdRepository>();
             services.AddTransient<IOwnerRepository, OwnerRepository>();
+            services.AddTransient<ICoupleRepository, CoupleRepository>();
             return services;
         }
 

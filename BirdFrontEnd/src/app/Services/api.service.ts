@@ -19,6 +19,12 @@ export class ApiService {
   public sortItemOwners: string = 'Alles';
   public searchnameOwner: string = '';
 
+  // COUPLES
+  // TODO
+  //
+  //
+  //
+
   constructor(private _http: HttpClient) { }
 
   // ***** BIRD CALLS *****

@@ -107,7 +107,7 @@ namespace BLL.Services
                 query = query.Where(x => x.Kotnummer == kotnummer);
             }
 
-            if(!string.IsNullOrWhiteSpace(ringnummer))
+            if(!string.IsNullOrWhiteSpace(ringnummer))  
             {
                 query = query.Where(x => x.Ringnummer == ringnummer);
             }

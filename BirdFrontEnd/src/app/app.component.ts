@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'Bird Database';
   birdItems: MenuItem[];
   ownerItems: MenuItem[];
+  coupleItems: MenuItem[];
 
   ngOnInit(){
     this.birdItems = [
@@ -36,6 +37,19 @@ export class AppComponent {
         icon: 'pi pi-plus',
         routerLink: '/owners/create'
     }
+];
+
+this.coupleItems = [
+  {
+      label: 'Overzicht Koppels',
+      icon: 'pi pi-home',
+      routerLink: '/couples'
+  },
+  {
+      label: 'Koppel Aanmaken',
+      icon: 'pi pi-plus',
+      routerLink: '/couples/create'
+  }
 ];
   }
 }

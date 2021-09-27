@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { TreeNode } from 'primeng/api';
+import { Bird } from '../Services/api.service';
+import { BirdService } from '../Services/bird.service';
 
 @Component({
   selector: 'app-couple',
@@ -7,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoupleComponent implements OnInit {
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit() : void{
+    
   }
-
 }

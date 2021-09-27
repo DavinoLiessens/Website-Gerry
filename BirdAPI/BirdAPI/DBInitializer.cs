@@ -23,6 +23,21 @@ namespace BirdAPI
                 Bird bird1;
                 //bird2, bird3, bird4, bird5, bird6, bird7, bird8, bird9, bird10, bird11, bird12, bird13, bird14, bird15, bird16, bird17, bird18, bird19, bird20;
                 Owner owner1, owner2, owner3, owner4, owner5, owner6, owner7, owner8, owner9, owner10, owner11, owner12;
+                Couple couple1;
+
+                // COUPLES
+                couple1 = new Couple()
+                {
+                    Name = "Koppel Goudvinken",
+                    Father = "ARP4000NR001",
+                    Mother = "ARP4000NR002",
+                    Child1 = "ARP4000NR003",
+                    Child2 = "ARP4000NR004",
+                    Child3 = "ARP4000NR005",
+                    Child4 = "ARP4000NR006",
+                    Child5 = "ARP4000NR007",
+                    Child6 = "ARP4000NR008"
+                };
 
                 // OWNERS
                 owner1 = new Owner()
@@ -353,6 +368,7 @@ namespace BirdAPI
                 //        Omschrijving = ""
                 //    };
                 }
+
                 // ADD BIRDS TO CONTEXT
                 {
                     context.Birds.Add(bird1);
@@ -394,6 +410,11 @@ namespace BirdAPI
                     context.Owners.Add(owner11);
                     context.Owners.Add(owner12);
                 }
+
+                // ADD COUPLES TO CONTEXT
+                context.Couples.Add(couple1);
+
+                // SAVE CHANGES
                 context.SaveChanges();
             }
         }

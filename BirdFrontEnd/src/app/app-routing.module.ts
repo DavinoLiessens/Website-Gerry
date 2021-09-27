@@ -4,6 +4,7 @@ import { BirdCreateComponent } from './bird/bird-create/bird-create.component';
 import { BirdDetailComponent } from './bird/bird-detail/bird-detail.component';
 import { BirdUpdateComponent } from './bird/bird-update/bird-update.component';
 import { BirdComponent } from './bird/bird.component';
+import { CoupleCreateComponent } from './couple/couple-create/couple-create.component';
 import { CoupleComponent } from './couple/couple.component';
 import { OwnerCreateComponent } from './owner/owner-create/owner-create.component';
 import { OwnerDetailComponent } from './owner/owner-detail/owner-detail.component';
@@ -26,11 +27,12 @@ const routes: Routes = [
 
   // COUPLE
   {path: "couples", component: CoupleComponent},
+  {path: "couples/create", component: CoupleCreateComponent},
   
   // PAGE NOT FOUND
   {path: "*", component: PageNotFoundComponent},
 
-  // OTHER
+  // OTHER  
   {path: "", redirectTo: "birds", pathMatch: "full"}
 ];
 /*

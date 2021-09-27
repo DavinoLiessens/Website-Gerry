@@ -39,7 +39,7 @@ namespace BirdAPI.Controllers
         {
             BirdVM vm = await _birdService.ChangeBird(id, body);
             return Ok(vm);
-        }
+        }   
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBird(int id)
