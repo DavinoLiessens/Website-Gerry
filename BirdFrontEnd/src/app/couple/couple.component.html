@@ -1,0 +1,127 @@
+<div class="card">
+    <p-table #dt1 [value]="couples" dataKey="id"
+        [rows]="25" [showCurrentPageReport]="true" styleClass="p-datatable-customers p-datatable-gridlines"
+        [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex">
+                <!-- <button pButton label="Clear" class="p-button-outlined" icon="pi pi-filter-slash" (click)="ClearFilters()"></button>  
+                <span class="p-input-icon-left" style="margin-left: 20px;">
+                    <i class="pi pi-search"></i>
+                    <input type="text" pInputText placeholder="Zoek Stamboom" [(ngModel)]="Pedigree" />
+                </span>  -->              
+            </div>
+            
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        ID 
+                        <!-- <p-columnFilter type="text" field="id" display="menu"></p-columnFilter>-->
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Naam 
+                        <!--<p-columnFilter type="text" field="owner" matchMode="in" display="menu"></p-columnFilter>-->
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Vader 
+                        <!--<p-columnFilter type="text" field="owner" matchMode="in" display="menu"></p-columnFilter>-->
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Moeder
+                        <!-- <p-columnFilter type="text" field="sex" display="menu"></p-columnFilter>-->
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Jong 1
+                        <!-- <p-columnFilter type="numeric" field="ringnumber" display="menu"></p-columnFilter>-->
+                    </div>
+                </th>                
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Jong 2
+                        <!-- <p-columnFilter type="text" field="typeOfBird" display="menu"></p-columnFilter> -->
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Jong 3 
+                        <!--<p-columnFilter type="text" field="owner" matchMode="in" display="menu"></p-columnFilter>-->
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Jong 4
+                        <!-- <p-columnFilter type="numeric" field="age" display="menu"></p-columnFilter>-->
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Jong 5
+                        <!-- <p-columnFilter type="numeric" field="cagenumber" display="menu"></p-columnFilter>-->
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Jong 6
+                    </div>
+                </th>
+                <th>
+                    <div class="p-d-flex p-jc-between p-ai-center">
+                        Opties
+                    </div>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-couple>
+            <tr>
+                <td>
+                    <p>{{couple.id}}</p>
+                </td>
+                <td>
+                    <p>{{couple.name}}</p>
+                </td>
+                <td>
+                    <p>{{couple.father}}</p>
+                </td>
+                <td>
+                    <p>{{couple.mother}}</p>
+                </td>
+                <td>
+                    <p>{{couple.child1}}</p>
+                </td>
+                <td>
+                    <p>{{couple.child2}}</p>
+                </td>
+                <td>
+                    <p>{{couple.child3}}</p>
+                </td>
+                <td>
+                    <p>{{couple.child4}}</p>
+                </td>
+                <td>
+                    <p>{{couple.child5}}</p>
+                </td>
+                <td>
+                    <p>{{couple.child6}}</p>
+                </td>
+                <td>
+                    <button pButton pRipple type="button" label="Details" class="detail-button" style="margin-left: 5px;" routerLink="/couples/detail/{{couple.id}}"></button>
+                    <button pButton pRipple type="button" label="Verwijder" class="p-button-danger" style="margin-left: 5px;" (click)="DeleteCouple(couple.id)"></button>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="emptymessage">
+            <tr>
+                <td colspan="7">Geen stamboom gevonden.</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>

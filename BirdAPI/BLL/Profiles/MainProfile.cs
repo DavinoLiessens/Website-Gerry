@@ -23,6 +23,10 @@ namespace BLL.Profiles
             CreateMap<CreateOwnerVM, Owner>();
             CreateMap<ChangeOwnerVM, Owner>();
             CreateMap<ChangeOwnerVM, OwnerVM>();
+
+            // COUPLE
+            CreateMap<Couple, CoupleVM>();
+            CreateMap<CreateCoupleVM, Couple>();
         }
     }
 }

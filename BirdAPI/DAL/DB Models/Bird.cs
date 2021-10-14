@@ -9,7 +9,7 @@ namespace DAL.DB_Models
         public int ID { get; set; }
 
         [Required]
-        public int Ringnummer { get; set; }
+        public string Ringnummer { get; set; }
         [Required]
         public string Geslacht { get; set; }
         [Required]
@@ -18,8 +18,16 @@ namespace DAL.DB_Models
         public int Jaartal { get; set; }
         [Required]
         public int Kotnummer { get; set; }
+        [Required]
+        public string Kleur { get; set; }
+        [Required]
+        public string Kweker { get; set; }
+        
         public int EigenaarID { get; set; }
         [Required]
         public Owner Eigenaar { get; set; }
+
+        [StringLength(200)]
+        public string Omschrijving { get; set; }
     }
 }

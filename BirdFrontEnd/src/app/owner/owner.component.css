@@ -1,0 +1,17 @@
+.card{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.searchbar{
+    margin-left: 20px;
+}
+
+.select-owners{
+    float: right;
+}
+
+.select-sort{
+    float: right;
+    margin-right: 20px;
+}

@@ -1,0 +1,39 @@
+<div class="birdtree">
+    <h2 class="title">Stamboom vogels</h2>
+    <p-organizationChart [value]="couples">
+        <ng-template let-node pTemplate="name">
+            <input pInputText class="inputfield" type="text" [(ngModel)]="CoupleName" [disabled]="disabled"/>
+        </ng-template>
+        <!-- PARENTS START -->
+        <ng-template let-node pTemplate="parentleft">
+            <input pInputText class="inputfield" type="text" [(ngModel)]="ParentLeft" [disabled]="disabled"/>
+        </ng-template>
+        <ng-template let-node pTemplate="parentright">
+            <input pInputText class="inputfield" type="text" [(ngModel)]="ParentRight" [disabled]="disabled"/>
+        </ng-template>
+        <!-- PARENTS END -->
+        <!-- CHILDREN LEFT START -->
+        <ng-template let-node pTemplate="childleft1">
+            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft1" [disabled]="disabled"/>
+        </ng-template>
+        <ng-template let-node pTemplate="childleft2">
+            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft2" [disabled]="disabled"/>
+        </ng-template>
+        <ng-template let-node pTemplate="childleft3">
+            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft3" [disabled]="disabled"/>
+        </ng-template>
+        <!-- CHILDREN LEFT END -->
+        <!-- CHILDREN RIGHT START -->
+        <ng-template let-node pTemplate="childright1">
+            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft4" [disabled]="disabled"/>
+        </ng-template>
+        <ng-template let-node pTemplate="childright2">
+            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft5" [disabled]="disabled"/>
+        </ng-template>
+        <ng-template let-node pTemplate="childright3">
+            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft6" [disabled]="disabled"/>
+        </ng-template>
+        <!-- CHILDREN RIGHT END -->
+    </p-organizationChart>
+    <button pButton type="button" label="Terug" icon="pi pi-undo" style="margin-left: 15px;" [routerLink]="['/couples']"></button>
+</div>

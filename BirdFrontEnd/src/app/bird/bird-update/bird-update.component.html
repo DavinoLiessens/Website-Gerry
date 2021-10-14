@@ -1,0 +1,22 @@
+<body style="background-image: url('../../../assets/background.PNG'); background-repeat: no-repeat; background-size: cover; height: 656px;">
+<p-panel header="Vogel Aanpassen: " *ngIf="bird" style="width: 650px; height: 500px; margin-left: 2%; margin-top: 2%;">
+    <div style="float: left;">
+        <div><p class="p-text">Ringnummer: </p><input pInputText type="st" class="inputfield" placeholder="{{bird.ringnummer}}" [(ngModel)]="bird.ringnummer" /></div><br><br><br>
+        <div><p class="p-text" style="margin-left: 29px;">Geslacht: </p><input pInputText type="text" class="inputfield" placeholder="{{bird.geslacht}}" [disabled]="disabled" [(ngModel)]="bird.geslacht" /></div><br><br><br>
+        <div><p class="p-text" style="margin-left: 50px;">Soort: </p><input pInputText type="text" class="inputfield" placeholder="{{bird.soort}}" [disabled]="disabled" [(ngModel)]="bird.soort" /></div><br><br><br>
+        <div><p class="p-text" style="margin-left: 50px;">Kleur: </p><input pInputText type="text" class="inputfield" [disabled]="disabled" placeholder="{{bird.kleur}}" [(ngModel)]="bird.kleur" /></div><br><br><br>
+        <div><p class="p-text" style="margin-left: 43px;">Jaartal: </p><input pInputText type="number" class="inputfield" [disabled]="disabled" placeholder="{{bird.jaartal}}" [(ngModel)]="bird.jaartal" /></div><br><br><br>    
+    </div>
+    <div style="float: right;">
+        <div><p class="p-text" style="margin-left: 10px;">Kotnummer: </p><input pInputText type="number" class="inputfield" placeholder="{{bird.kotnummer}}" [(ngModel)]="bird.kotnummer" /></div><br><br><br>
+        <div><p class="p-text" style="margin-left: 30px;">Kweker: </p>
+            <select [(ngModel)]="bird.eigenaarID" [disabled]="disabled" required class="inputfield" style="width: 195px; height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px; appearance: none;">
+                <option  *ngFor="let item of ownerOptions" [ngValue]="item.id">{{item.voornaam}} {{item.achternaam}}</option>
+            </select></div><br><br><br>
+        <div><p class="p-text" style="margin-left: 30px;">Eigenaar: </p><input pInputText type="text" class="inputfield" placeholder="{{bird.kweker}}" [(ngModel)]="bird.kweker" /></div><br><br><br><br>
+        <div><p class="p-text" style="margin-left: -5px; margin-top: -1px;">Omschrijving: </p><textarea pInputTextarea [(ngModel)]="bird.omschrijving" aria-placeholder="{{bird.omschrijving}}" [rows]="1" [cols]="30" autoResize="autoResize" class="textarea-content" placeholder="{{bird.omschrijving}}"></textarea></div><br><br><br><br>
+    </div>
+    
+    <button pButton type="button" label="Opslaan" icon="pi pi-check" (click)="SaveBird()"></button>    
+</p-panel>
+</body>

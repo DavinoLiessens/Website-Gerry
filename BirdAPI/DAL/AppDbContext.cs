@@ -15,6 +15,7 @@ namespace DAL
 
         public DbSet<Bird> Birds { get; set; }
         public DbSet<Owner> Owners { get; set; }
+        public DbSet<Couple> Couples { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

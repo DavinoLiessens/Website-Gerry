@@ -17,7 +17,7 @@ namespace BLL
             // SERVICES
             services.AddTransient<IBirdService, BirdService>();
             services.AddTransient<IOwnerService, OwnerService>();
-
+            services.AddTransient<ICoupleService, CoupleService>();
             return services;
         }
     }

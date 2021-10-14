@@ -1,5 +1,6 @@
 ﻿using BLL.Services;
 using BLL.ViewModels;
+using DAL.DB_Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -27,9 +28,9 @@ namespace BirdAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllBirds()
+        public async Task<IActionResult> GetAllBirds(string owner, string soort, int? kotnummer, string ringnummer, string sort, int? page, int length = 10, string dir = "asc")
         {
-            List<BirdVM> vm = await _birdService.GetAllBirds();
+            List<BirdVM> vm = await _birdService.GetAllBirds(owner, soort, kotnummer, ringnummer, sort, page, length, dir);
             return Ok(vm);
         }
 
@@ -38,7 +39,7 @@ namespace BirdAPI.Controllers
         {
             BirdVM vm = await _birdService.ChangeBird(id, body);
             return Ok(vm);
-        }
+        }   
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBird(int id)

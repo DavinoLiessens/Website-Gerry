@@ -1,0 +1,10 @@
+<body style="background-image: url('../../../assets/background.PNG'); background-repeat: no-repeat; background-size: cover; height: 656px;">
+<p-panel header="Nieuwe Kweker Aanmaken: " style="float:left; width: 350px; margin-left: 38%; margin-top: 2%;">    
+    <div><p style="float: left; margin-left: 10px;">Voornaam: </p><input pInputText type="text" style="float:right;" placeholder="Voornaam..." [(ngModel)]="Voornaam" /></div><br><br><br>
+    <div><p style="float: left;">Achternaam: </p><input pInputText type="text" style="float:right;" placeholder="Achternaam..." [(ngModel)]="Achternaam" /></div><br><br><br>
+    <div><p style="float: left;">Telefoon: </p><input pInputText type="text" style="float:right;" placeholder="Telefoon..." [(ngModel)]="Telefoon" /></div><br><br><br>
+    <div><p style="float: left;">E-mail: </p><input pInputText type="text" style="float:right;" placeholder="E-mail..." [(ngModel)]="Email" /></div><br><br><br><br>
+    <button pButton type="button" label="Terug" icon="pi pi-undo" style="margin-top: -30px;" [routerLink]="['/owners']"></button> 
+    <button pButton type="button" label="Opslaan" icon="pi pi-check" style="float: right; margin-top: -20px;" (click)="CreateOwner()"></button>
+</p-panel>
+</body>

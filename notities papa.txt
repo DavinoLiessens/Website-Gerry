@@ -1,0 +1,28 @@
+bij vogel aanmaken,
+
+* foto bij iedere vogel
+
+* koppels tab bijmaken
+inspiratie zoeken op primeng welke componenten ik kan gebruiken
+
+Ieder koppel krijgt zijn eigen stamboom tree
+
+		VADER			MOEDER
+		  |			   |
+		  |			   |
+	
+	JONG		JONG		JONG		JONG
+	  |		  |  		  |  		  |
+
+
+Als er jongen van deze ouders zijn die gaan kweken maak je een
+nieuwe tree aan en begin je opnieuw. Zo kun je kweekoverzicht behouden
+en zo kunnen we er telkens pagina's aan toevoegen
+
+***************************
+
+TODO
+
+ophalen van alle vogels is al gelukt.
+Nu moeten we enkel de ringnummers eruit halen en in aparte
+array steken en die dan tonen met een dropdown per child type 'child'
