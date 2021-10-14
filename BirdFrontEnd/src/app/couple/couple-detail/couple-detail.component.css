@@ -1,0 +1,16 @@
+.inputfield{
+    float: right;
+    margin-top: 10px;
+    width: 160px;
+    text-align: center;
+}
+
+.birdtree{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.title{
+    margin-left: 44%;
+    text-decoration: underline;
+}

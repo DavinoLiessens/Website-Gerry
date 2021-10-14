@@ -15,7 +15,7 @@ export class AppComponent {
   ngOnInit(){
     this.birdItems = [
       {
-          label: 'Overzicht Database',
+          label: 'Overzicht Vogels',
           icon: 'pi pi-home',
           routerLink: '/birds'
       },
@@ -28,7 +28,7 @@ export class AppComponent {
 
   this.ownerItems = [
     {
-        label: 'Overzicht Database',
+        label: 'Overzicht Kwekers',
         icon: 'pi pi-home',
         routerLink: '/owners'
     },

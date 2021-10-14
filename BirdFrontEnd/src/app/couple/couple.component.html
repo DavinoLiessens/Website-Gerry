@@ -75,7 +75,7 @@
                 </th>
                 <th>
                     <div class="p-d-flex p-jc-between p-ai-center">
-                        Item Verwijderen
+                        Opties
                     </div>
                 </th>
             </tr>
@@ -113,6 +113,7 @@
                     <p>{{couple.child6}}</p>
                 </td>
                 <td>
+                    <button pButton pRipple type="button" label="Details" class="detail-button" style="margin-left: 5px;" routerLink="/couples/detail/{{couple.id}}"></button>
                     <button pButton pRipple type="button" label="Verwijder" class="p-button-danger" style="margin-left: 5px;" (click)="DeleteCouple(couple.id)"></button>
                 </td>
             </tr>

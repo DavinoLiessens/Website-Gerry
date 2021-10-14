@@ -54,7 +54,7 @@ export class CoupleCreateComponent implements OnInit {
               ]
           },
           {
-              label: 'EAR178962NR002', type: 'parentright',
+              label: '', type: 'parentright',
               expanded: true,
               children: [
                   {

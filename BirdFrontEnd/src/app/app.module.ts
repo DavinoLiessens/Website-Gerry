@@ -29,6 +29,7 @@ import { OwnerUpdateComponent } from './owner/owner-update/owner-update.componen
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CoupleComponent } from './couple/couple.component';
 import { CoupleCreateComponent } from './couple/couple-create/couple-create.component';
+import { CoupleDetailComponent } from './couple/couple-detail/couple-detail.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { CoupleCreateComponent } from './couple/couple-create/couple-create.comp
     OwnerUpdateComponent,
     PageNotFoundComponent,
     CoupleComponent,
-    CoupleCreateComponent
+    CoupleCreateComponent,
+    CoupleDetailComponent
   ],
   imports: [
     BrowserModule,

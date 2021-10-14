@@ -21,8 +21,7 @@ namespace BirdAPI
             if (!context.Birds.Any())
             {
                 Bird bird1;
-                //bird2, bird3, bird4, bird5, bird6, bird7, bird8, bird9, bird10, bird11, bird12, bird13, bird14, bird15, bird16, bird17, bird18, bird19, bird20;
-                Owner owner1, owner2, owner3, owner4, owner5, owner6, owner7, owner8, owner9, owner10, owner11, owner12;
+                Owner owner1, owner2, owner3;
                 Couple couple1;
 
                 // COUPLES
@@ -51,84 +50,21 @@ namespace BirdAPI
                 {
                     Voornaam = "Gerry",
                     Achternaam = "Liessens",
-                    Telefoon = "+32471300157",
-                    Email = "davino.liessens@hotmail.com"
-                };
+                    Telefoon = "+32478365276",
+                    Email = "gerry.liessens@telenet.be"
+                };                
                 owner3 = new Owner()
-                {
-                    Voornaam = "Lolo",
-                    Achternaam = "Liessens",
-                    Telefoon = "+32471300157",
-                    Email = "davino.liessens@hotmail.com"
-                };
-                owner4 = new Owner()
-                {
-                    Voornaam = "Laureanne",
-                    Achternaam = "Vanbellingen",
-                    Telefoon = "+32471300157",
-                    Email = "davino.liessens@hotmail.com"
-                };
-                owner5 = new Owner()
-                {
-                    Voornaam = "Nicole",
-                    Achternaam = "Vancraeybex",
-                    Telefoon = "+32471300157",
-                    Email = "davino.liessens@hotmail.com"
-                };
-                owner6 = new Owner()
                 {
                     Voornaam = "Franky",
                     Achternaam = "Liessens",
-                    Telefoon = "+32471300157",
-                    Email = "davino.liessens@hotmail.com"
-                };
-                owner7 = new Owner()
-                {
-                    Voornaam = "Wilfried",
-                    Achternaam = "Liessens",
-                    Telefoon = "+32471300157",
-                    Email = "davino.liessens@hotmail.com"
-                };
-                owner8 = new Owner()
-                {
-                    Voornaam = "Rudy",
-                    Achternaam = "Janssens",
-                    Telefoon = "+32471300157",
-                    Email = "davino.liessens@hotmail.com"
-                };
-                owner9 = new Owner()
-                {
-                    Voornaam = "Eddy",
-                    Achternaam = "Liessens",
-                    Telefoon = "+32471300157",
-                    Email = "davino.liessens@hotmail.com"
-                };
-                owner10 = new Owner()
-                {
-                    Voornaam = "Tom",
-                    Achternaam = "Van Grieken",
-                    Telefoon = "+32471300157",
-                    Email = "davino.liessens@hotmail.com"
-                };
-                owner11 = new Owner()
-                {
-                    Voornaam = "Paul",
-                    Achternaam = "Janssens",
-                    Telefoon = "+32471300157",
-                    Email = "davino.liessens@hotmail.com"
-                };
-                owner12 = new Owner()
-                {
-                    Voornaam = "Oby",
-                    Achternaam = "Liessens",
-                    Telefoon = "+32471300157",
-                    Email = "davino.liessens@hotmail.com"
-                };
+                    Telefoon = "+32478365276",
+                    Email = "gerry.liessens@telenet.be"
+                };               
 
                 // BIRDS
                 bird1 = new Bird()
                 {
-                    Ringnummer = "1003456",
+                    Ringnummer = "ARP001NR009",
                     Geslacht = "Pop",
                     Soort = "Vink",
                     Jaartal = 2005,
@@ -400,15 +336,6 @@ namespace BirdAPI
                     context.Owners.Add(owner1);
                     context.Owners.Add(owner2);
                     context.Owners.Add(owner3);
-                    context.Owners.Add(owner4);
-                    context.Owners.Add(owner5);
-                    context.Owners.Add(owner6);
-                    context.Owners.Add(owner7);
-                    context.Owners.Add(owner8);
-                    context.Owners.Add(owner9);
-                    context.Owners.Add(owner10);
-                    context.Owners.Add(owner11);
-                    context.Owners.Add(owner12);
                 }
 
                 // ADD COUPLES TO CONTEXT

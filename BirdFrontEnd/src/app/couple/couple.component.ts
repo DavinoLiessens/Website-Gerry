@@ -11,7 +11,7 @@ import { BirdService } from '../Services/bird.service';
 export class CoupleComponent implements OnInit {
 
   couples: Couple[];
-  
+  couple: Couple;
   constructor(private apiService: ApiService) {}
 
   ngOnInit() : void{
