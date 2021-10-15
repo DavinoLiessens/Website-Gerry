@@ -27,9 +27,9 @@ namespace BirdAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllCouples()
+        public async Task<IActionResult> GetAllCouples(string father, string mother, string name, string sort)
         {
-            List<CoupleVM> couples = await _coupleService.GetAllCouples();
+            List<CoupleVM> couples = await _coupleService.GetAllCouples(father, mother, name, sort);
             return Ok(couples);
         }
 
@@ -44,6 +44,13 @@ namespace BirdAPI.Controllers
         public async Task<IActionResult> DeleteCouple(int id)
         {
             CoupleVM vm = await _coupleService.DeleteCouple(id);
+            return Ok(vm);
+        }
+
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> ChangeCouple(int id, [FromBody] ChangeCoupleVM body)
+        {
+            CoupleVM vm = await _coupleService.UpdateCouple(id, body);
             return Ok(vm);
         }
     }

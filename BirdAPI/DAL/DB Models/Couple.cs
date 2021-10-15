@@ -21,5 +21,7 @@ namespace DAL.DB_Models
         public string Child4 { get; set; }
         public string Child5 { get; set; }
         public string Child6 { get; set; }
+        [StringLength(200)]
+        public string Description { get; set; }
     }
 }

@@ -16,5 +16,6 @@ namespace BLL.ViewModels
         public int EigenaarID { get; set; }
 
         public string Omschrijving { get; set; }
+        public bool Dood { get; set; }
     }
 }

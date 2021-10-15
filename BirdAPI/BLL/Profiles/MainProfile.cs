@@ -27,6 +27,8 @@ namespace BLL.Profiles
             // COUPLE
             CreateMap<Couple, CoupleVM>();
             CreateMap<CreateCoupleVM, Couple>();
+            CreateMap<ChangeCoupleVM, Couple>();
+            CreateMap<ChangeCoupleVM, CoupleVM>();
         }
     }
 }

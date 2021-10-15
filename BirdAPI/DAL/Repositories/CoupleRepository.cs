@@ -13,7 +13,7 @@ namespace DAL.Repositories
         Task<List<Couple>> GetAllCouples();
         Task<Couple> CreateCouple(Couple couple);
         Task<Couple> DeleteCouple(int id);
-        // Task<Couple> UpdateCouple(Couple couple);
+        Task<Couple> ChangeCouple(Couple couple);
     }
     public class CoupleRepository : ICoupleRepository
     {
@@ -48,12 +48,12 @@ namespace DAL.Repositories
             return await _context.Couples.SingleOrDefaultAsync(x => x.ID == id);
         }
 
-        //public async Task<Couple> UpdateCouple(Couple couple)
-        //{
-        //    _context.Couples.Update(couple);
-        //    await _context.SaveChangesAsync();
-        //    Couple dbCouple = await _context.Couples.SingleOrDefaultAsync(x => x.ID == couple.ID);
-        //    return dbCouple;
-        //}
+        public async Task<Couple> ChangeCouple(Couple couple)
+        {
+            _context.Couples.Update(couple);
+            await _context.SaveChangesAsync();
+            Couple dbCouple = await _context.Couples.SingleOrDefaultAsync(x => x.ID == couple.ID);
+            return dbCouple;
+        }
     }
 }

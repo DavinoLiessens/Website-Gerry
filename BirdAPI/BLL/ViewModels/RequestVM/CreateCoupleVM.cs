@@ -15,5 +15,6 @@ namespace BLL.ViewModels
         public string Child4 { get; set; }
         public string Child5 { get; set; }
         public string Child6 { get; set; }
+        public string Description { get; set; }
     }
 }
