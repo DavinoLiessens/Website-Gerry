@@ -33,8 +33,6 @@ export class BirdUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.GetBird();
-    this.GeslachtOptions = ['Pop', 'Man'];
-    this.typeOfBirdOptions = ['Kanarie', 'Goudvink', 'Vink', 'Parkiet', 'Papegaai', 'Mus', 'Distelvink', 'Roodborst'];
     this.apiService.GetAllOwners().subscribe((res) => this.ownerOptions = res);
   }
 

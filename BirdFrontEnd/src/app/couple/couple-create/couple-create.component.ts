@@ -22,6 +22,7 @@ export class CoupleCreateComponent implements OnInit {
   private childRight1: string;
   private childRight2: string;
   private childRight3: string;
+  private description: string;
 
   // create array to show tree and init all birds
   birds: Bird[];
@@ -97,7 +98,8 @@ export class CoupleCreateComponent implements OnInit {
       child3: this.childLeft3,
       child4: this.childRight1,
       child5: this.childRight2,
-      child6: this.childRight3
+      child6: this.childRight3,
+      description: this.description
     };   
 
     try{
@@ -184,6 +186,14 @@ export class CoupleCreateComponent implements OnInit {
 
   set ChildRight3(value: string){
     this.childRight3 = value;
+  }
+
+  get Description(){
+    return this.description;
+  }
+
+  set Description(value: string){
+    this.description = value;
   }
 
 }

@@ -19,6 +19,8 @@ namespace BLL.ViewModels
         public OwnerVM Eigenaar { get; set; }
 
         public string Omschrijving { get; set; }
+        public bool Dood { get; set; }
+        //public string FotoUrl { get; set; }
         // public string OwnerFullName { get; set; }
     }
 }

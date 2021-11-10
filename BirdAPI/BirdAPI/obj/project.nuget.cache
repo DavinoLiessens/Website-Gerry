@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "IZoedaLYGI23kyY735jGvexuKd7Q+7j7JQ6dpZPB0pesNLoe5OqsUZ5ftN7/Mvk5uBW7xH4+M5LFo/15eV0UFg==",
+  "dgSpecHash": "OFBcPmDKHmoqlOZXTTMGB9R6C9kY4Z/+XUrK3IBjVbfDxOWFQtBFJ/08ZgmFBQTTxlfh6u8IUtg9MKYgxyWk0A==",
   "success": true,
   "projectFilePath": "C:\\Users\\davin\\OneDrive\\Documenten\\School\\Website Gerry\\BirdAPI\\BirdAPI\\BirdAPI.csproj",
   "expectedPackageFiles": [
@@ -13,8 +13,10 @@
     "C:\\Users\\davin\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.16\\microsoft.entityframeworkcore.3.1.16.nupkg.sha512",
     "C:\\Users\\davin\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.16\\microsoft.entityframeworkcore.abstractions.3.1.16.nupkg.sha512",
     "C:\\Users\\davin\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.16\\microsoft.entityframeworkcore.analyzers.3.1.16.nupkg.sha512",
+    "C:\\Users\\davin\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.16\\microsoft.entityframeworkcore.design.3.1.16.nupkg.sha512",
     "C:\\Users\\davin\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.16\\microsoft.entityframeworkcore.relational.3.1.16.nupkg.sha512",
     "C:\\Users\\davin\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\3.1.16\\microsoft.entityframeworkcore.sqlserver.3.1.16.nupkg.sha512",
+    "C:\\Users\\davin\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.16\\microsoft.entityframeworkcore.tools.3.1.16.nupkg.sha512",
     "C:\\Users\\davin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\davin\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.16\\microsoft.extensions.caching.abstractions.3.1.16.nupkg.sha512",
     "C:\\Users\\davin\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.16\\microsoft.extensions.caching.memory.3.1.16.nupkg.sha512",

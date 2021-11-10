@@ -59,6 +59,7 @@
         </ng-template>
         <!-- CHILDREN RIGHT END -->
     </p-organizationChart>
+    <div><p class="p-text" style="margin-left: -5px; margin-top: -1px;">Omschrijving: </p><textarea pInputTextarea [(ngModel)]="Description" class="textarea-content" [rows]="1" [cols]="30" autoResize="autoResize" placeholder="Omschrijving..."></textarea></div>
     <button pButton type="button" label="Terug" icon="pi pi-undo" style="margin-left: 15px;" [routerLink]="['/couples']"></button> 
     <button pButton class="savebutton" type="button" label="Opslaan" icon="pi pi-check" (click)="CreateTree()"></button>
 </div>

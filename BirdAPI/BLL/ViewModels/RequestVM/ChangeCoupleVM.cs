@@ -4,9 +4,8 @@ using System.Text;
 
 namespace BLL.ViewModels
 {
-    public class CoupleVM
+    public class ChangeCoupleVM
     {
-        public int ID { get; set; }
         public string Name { get; set; }
         public string Mother { get; set; }
         public string Father { get; set; }

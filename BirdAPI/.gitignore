@@ -111,6 +111,8 @@ ipch/
 *.cachefile
 *.VC.db
 *.VC.VC.opendb
+*.cache
+DAL/bin/Debug/netstandard2.0/*.dll
 
 # Visual Studio profiler
 *.psess

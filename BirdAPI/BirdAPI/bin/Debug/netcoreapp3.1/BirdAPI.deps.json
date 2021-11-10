@@ -26,6 +26,7 @@
         "dependencies": {
           "BLL": "1.0.0",
           "DAL": "1.0.0",
+          "Microsoft.EntityFrameworkCore.Tools": "3.1.16",
           "Swashbuckle.AspNetCore": "6.1.4",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -428,6 +429,18 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/3.1.16": {},
+      "Microsoft.EntityFrameworkCore.Design/3.1.16": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Microsoft.EntityFrameworkCore.Relational": "3.1.16"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.EntityFrameworkCore.Design.dll": {
+            "assemblyVersion": "3.1.16.0",
+            "fileVersion": "3.100.1621.26206"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.Relational/3.1.16": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.16"
@@ -455,6 +468,11 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Tools/3.1.16": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "3.1.16"
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
@@ -3092,6 +3110,13 @@
       "path": "microsoft.entityframeworkcore.analyzers/3.1.16",
       "hashPath": "microsoft.entityframeworkcore.analyzers.3.1.16.nupkg.sha512"
     },
+    "Microsoft.EntityFrameworkCore.Design/3.1.16": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-/MdudkkRYI/V+xvd0R1ZtN9Uj85KL3K7XOeyg0dkCBaZFiv7bjTxMWrQk7KejjIRa7uQRIDKAK3BOPJ82uVfKA==",
+      "path": "microsoft.entityframeworkcore.design/3.1.16",
+      "hashPath": "microsoft.entityframeworkcore.design.3.1.16.nupkg.sha512"
+    },
     "Microsoft.EntityFrameworkCore.Relational/3.1.16": {
       "type": "package",
       "serviceable": true,
@@ -3105,6 +3130,13 @@
       "sha512": "sha512-ciFMv38qXgkI+dZgLsm8Xhvs9WYviBvnvBCPwkibPpg5sqN0QXEveufoK9VJ983LQDA+a5z9mqadchVpRH9upg==",
       "path": "microsoft.entityframeworkcore.sqlserver/3.1.16",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.3.1.16.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Tools/3.1.16": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-BKCZX+0j8wvrZs6NUAuDLpMBVkipWXz0Gp2rI0wrBnoe6Ree7Y6wudtjo73yMrMTJX8ty0EU5iuSoVYod/dWEA==",
+      "path": "microsoft.entityframeworkcore.tools/3.1.16",
+      "hashPath": "microsoft.entityframeworkcore.tools.3.1.16.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",

@@ -29,5 +29,8 @@ namespace DAL.DB_Models
 
         [StringLength(200)]
         public string Omschrijving { get; set; }
+
+        public bool Dood { get; set; }
+        //public string FotoUrl { get; set; }
     }
 }

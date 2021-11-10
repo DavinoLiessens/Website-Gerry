@@ -2,38 +2,64 @@
     <h2 class="title">Stamboom vogels</h2>
     <p-organizationChart [value]="couples">
         <ng-template let-node pTemplate="name">
-            <input pInputText class="inputfield" type="text" [(ngModel)]="CoupleName" [disabled]="disabled"/>
+            <input pInputText type="text" [(ngModel)]="CoupleName" placeholder="Naam van het koppel..." />
         </ng-template>
         <!-- PARENTS START -->
         <ng-template let-node pTemplate="parentleft">
-            <input pInputText class="inputfield" type="text" [(ngModel)]="ParentLeft" [disabled]="disabled"/>
+            <select [(ngModel)]="ParentLeft" required class="inputfield" style="height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                <option value="">Selecteer een pop</option>
+                <option *ngFor="let bird of birds">{{bird.ringnummer}}</option>
+            </select>
         </ng-template>
         <ng-template let-node pTemplate="parentright">
-            <input pInputText class="inputfield" type="text" [(ngModel)]="ParentRight" [disabled]="disabled"/>
+            <select [(ngModel)]="ParentRight" required class="inputfield" style="height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                <option value="">Selecteer een man</option>
+                <option *ngFor="let bird of birds">{{bird.ringnummer}}</option>
+            </select>
         </ng-template>
         <!-- PARENTS END -->
         <!-- CHILDREN LEFT START -->
         <ng-template let-node pTemplate="childleft1">
-            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft1" [disabled]="disabled"/>
+            <select [(ngModel)]="ChildLeft1" required class="inputfield" style="height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                <option value="">Selecteer een jong</option>
+                <option *ngFor="let bird of birds">{{bird.ringnummer}}</option>
+            </select>
         </ng-template>
         <ng-template let-node pTemplate="childleft2">
-            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft2" [disabled]="disabled"/>
+            <select [(ngModel)]="ChildLeft2" required class="inputfield" style="height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                <option value="">Selecteer een jong</option>
+                <option *ngFor="let bird of birds">{{bird.ringnummer}}</option>
+            </select>
         </ng-template>
         <ng-template let-node pTemplate="childleft3">
-            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft3" [disabled]="disabled"/>
+            <select [(ngModel)]="ChildLeft3" required class="inputfield" style="height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                <option value="">Selecteer een jong</option>
+                <option *ngFor="let bird of birds">{{bird.ringnummer}}</option>
+            </select>
         </ng-template>
         <!-- CHILDREN LEFT END -->
         <!-- CHILDREN RIGHT START -->
         <ng-template let-node pTemplate="childright1">
-            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft4" [disabled]="disabled"/>
+            <select [(ngModel)]="ChildRight1" required class="inputfield" style="height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                <option value="">Selecteer een jong</option>
+                <option *ngFor="let bird of birds">{{bird.ringnummer}}</option>
+            </select>
         </ng-template>
         <ng-template let-node pTemplate="childright2">
-            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft5" [disabled]="disabled"/>
+            <select [(ngModel)]="ChildRight2" required class="inputfield" style="height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                <option value="">Selecteer een jong</option>
+                <option *ngFor="let bird of birds">{{bird.ringnummer}}</option>
+            </select>
         </ng-template>
         <ng-template let-node pTemplate="childright3">
-            <input pInputText class="inputfield" type="text" [(ngModel)]="ChildLeft6" [disabled]="disabled"/>
+            <select [(ngModel)]="ChildRight3" required class="inputfield" style="height: 35px; color: lightslategrey; border-color: lightgray; font-size: 15px;">
+                <option value="">Selecteer een jong</option>
+                <option *ngFor="let bird of birds">{{bird.ringnummer}}</option>
+            </select>
         </ng-template>
         <!-- CHILDREN RIGHT END -->
     </p-organizationChart>
-    <button pButton type="button" label="Terug" icon="pi pi-undo" style="margin-left: 15px;" [routerLink]="['/couples']"></button>
+    <div><p class="p-text" style="margin-left: -5px; margin-top: -1px;">Omschrijving: </p><textarea pInputTextarea [(ngModel)]="Description" class="textarea-content" [rows]="1" [cols]="30" autoResize="autoResize" placeholder="Omschrijving..."></textarea></div>
+    <button pButton class="savebutton" type="button" label="Opslaan" icon="pi pi-check" (click)="UpdateTree()"></button>
+    <button pButton type="button" label="Terug" icon="pi pi-undo" style="margin-left: 15px;" [routerLink]="['/couples']"></button>    
 </div>

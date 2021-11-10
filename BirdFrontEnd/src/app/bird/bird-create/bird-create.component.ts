@@ -52,25 +52,6 @@ export class BirdCreateComponent implements OnInit {
   ngOnInit(): void {
     this.GeslachtOptions = ['Pop', 'Man'];
     this.typeOfBirdOptions = ['Kanarie', 'Goudvink', 'Distelvink', 'Sijzen', 'Appelvink', 'Fischeri', 'Barmsijzen', 'Mexicaanse Roodmus'];
-    // Voor kanaries -> Intensief, Schimmel, Wit, Agaat Wit, Agaat Geel, Agaat Groen, Agaat Rood
-    //this.kanarieColors = ['Intensief', 'Schimmel', 'Wit', 'Agaat Wit', 'Agaat Geel', 'Agaat Groen', 'Agaat Rood'];
-    // Voor goudvink -> Wildkleur, Wildkleur/Bruin, Wildkleur/Bruin Pastel, Bruin, Bruin Pastel
-    //this.goudvinkColors = ['Wildkleur', 'Wildkleur/Bruin', 'Wildkleur/Bruin Pastel', 'Bruin', 'Bruin Pastel'];
-    // Voor distelvink -> Bruin, Agaat, Isabel, Agaat Bruin, Satinet, Eumo, Pastel, Agaat Pastel, Bruin Pastel, Witkop
-    //this.distelvinkColors = ['Bruin', 'Agaat', 'Isabel', 'Agaat Bruin', 'Satinet', 'Eumo', 'Pastel', 'Agaat Pastel', 'Bruin Pastel', 'Witkop'];
-    // Voor sijzen -> Wildkleur, Wildkleur/Bruin, Wildkleur/Ivoor, Bruin, Ivoor, Zwartkop
-    //this.sijzenColors = ['Wildkleur', 'Wildkleur/Bruin', 'Wildkleur/Ivoor', 'Bruin', 'Ivoor', 'Zwartkop'];
-    // Voor Appelvink -> Wildkleur
-    //this.appelvinkColors = ['Wildkleur'];
-    // Voor Fischeri -> Groen, Blauw, Lutino, Paars, Wit
-    //this.fischeriColors = ['Groen', 'Blauw', 'Lutino', 'Paars', 'Wit'];
-    // Voor Barmsijzen -> Wildkleur, Wildkleur/Satinet, Wildkleur/Ivoor, Satinet, Ivoor
-    //this.barmsijzenColors = ['Wildkleur', 'Wildkleur/Satinet', 'Wildkleur/Ivoor', 'Satinet', 'Ivoor'];
-    // Voor Roodmus -> wildkleur
-    //this.roodmusColors = ['Wildkleur'];
-
-    // color options
-    //this.colorOptions = ['Geel', 'Rood', 'Bruin', 'Grijs', 'Zwart', 'Appelblauwzeegroen','Pastelbruin'];
 
     // grouped colors
     this.groupedColors = [
