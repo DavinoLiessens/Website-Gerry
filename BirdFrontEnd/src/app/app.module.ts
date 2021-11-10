@@ -15,6 +15,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { PanelModule } from 'primeng/panel';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { OrganizationChartModule } from 'primeng/organizationchart';
+import { CheckboxModule } from 'primeng/checkbox';
 
 // *** COMPONENTS ***
 import { AppComponent } from './app.component';
@@ -62,7 +63,8 @@ import { CoupleDetailComponent } from './couple/couple-detail/couple-detail.comp
     DropdownModule, 
     PanelModule,
     InputTextareaModule,
-    OrganizationChartModule
+    OrganizationChartModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

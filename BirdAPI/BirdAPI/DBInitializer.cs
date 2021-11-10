@@ -12,7 +12,7 @@ namespace BirdAPI
         public static void Initialize(AppDbContext context)
         {
             // database terug leegmaken als we opnieuw opstarten
-            //context.Database.EnsureDeleted();
+            context.Database.EnsureDeleted();
 
             // database aanmaken als er geen bestaat
             context.Database.EnsureCreated();
@@ -23,20 +23,6 @@ namespace BirdAPI
                 Bird bird1;
                 Owner owner1, owner2, owner3;
                 Couple couple1;
-
-                // COUPLES
-                couple1 = new Couple()
-                {
-                    Name = "Koppel Goudvinken",
-                    Father = "ARP4000NR001",
-                    Mother = "ARP4000NR002",
-                    Child1 = "ARP4000NR003",
-                    Child2 = "ARP4000NR004",
-                    Child3 = "ARP4000NR005",
-                    Child4 = "ARP4000NR006",
-                    Child5 = "ARP4000NR007",
-                    Child6 = "ARP4000NR008"
-                };
 
                 // OWNERS
                 owner1 = new Owner()
@@ -72,7 +58,22 @@ namespace BirdAPI
                     Eigenaar = owner2,
                     Kleur = "Grijs",
                     Kweker = "Gerry Liessens",
-                    Omschrijving = ""
+                    Omschrijving = "",
+                    Dood = false
+                };
+
+                // COUPLES
+                couple1 = new Couple()
+                {
+                    Name = "Koppel Goudvinken",
+                    Father = bird1.Ringnummer.ToString(),
+                    Mother = bird1.Ringnummer.ToString(),
+                    Child1 = bird1.Ringnummer.ToString(),
+                    Child2 = bird1.Ringnummer.ToString(),
+                    Child3 = bird1.Ringnummer.ToString(),
+                    Child4 = bird1.Ringnummer.ToString(),
+                    Child5 = bird1.Ringnummer.ToString(),
+                    Child6 = bird1.Ringnummer.ToString()
                 };
                 {
                 //    bird2 = new Bird()

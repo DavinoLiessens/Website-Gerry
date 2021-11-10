@@ -1,0 +1,14 @@
+dood moet aangepast worden bij create bird & update bird
+
+url moet aangepast worden bij create
+
+bird model moet aangepast worden in api service
+
+wanneer we de checkbox aanvinken moet er een update bird call gebeuren
+
+wanneer de checkbox is aangevinkt moet de tekst rood worden / omkadert worden
+
+
+couple update component bijmaken
+
+ervoor zorgen dat we de couples kunnen aanpassen

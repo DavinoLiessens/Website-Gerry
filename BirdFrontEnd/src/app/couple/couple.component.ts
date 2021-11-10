@@ -22,6 +22,7 @@ export class CoupleComponent implements OnInit {
     try{
       this.apiService.GetAllCouples().subscribe( res => {
         this.couples = res;
+        console.log(this.couples);
       });
     }
     catch{

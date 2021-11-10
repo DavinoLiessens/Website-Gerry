@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TreeNode } from 'primeng/api';
-import { ApiService, Couple } from 'src/app/Services/api.service';
+import { ApiService, Bird, Couple } from 'src/app/Services/api.service';
 
 @Component({
   selector: 'app-couple-detail',
@@ -12,11 +12,16 @@ export class CoupleDetailComponent implements OnInit {
 
   @Input() coupleDetail: Couple;
 
+  updateCouple: Couple;
+
   couples: TreeNode[];
   disabled: boolean = true;
-  constructor(private apiService: ApiService, private route: ActivatedRoute) { }
+  birds: Bird[];
+  
+  constructor(private apiService: ApiService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.apiService.GetAllBirds().subscribe(res => this.birds = res);
     this.GetCouple();
     this.couples = [{
       label: '', type:'name',
@@ -56,6 +61,31 @@ export class CoupleDetailComponent implements OnInit {
     }];
   }
 
+  UpdateTree(){
+    try{
+      this.updateCouple = {
+        name: this.coupleDetail.name,
+        father: this.coupleDetail.father,
+        mother: this.coupleDetail.mother,
+        child1: this.coupleDetail.child1,
+        child2: this.coupleDetail.child2,
+        child3: this.coupleDetail.child3,
+        child4: this.coupleDetail.child4,
+        child5: this.coupleDetail.child5,
+        child6: this.coupleDetail.child6,
+        description: this.coupleDetail.description
+      };
+
+      this.apiService.UpdateCouple(this.coupleDetail.id, this.updateCouple).subscribe(res => {
+        this.router.navigate(['/couples']);
+        alert("Update Succesfull!");
+      });
+    }
+    catch{
+      alert("Het wijzigen van de stamboom is mislukt!");
+    }
+  }
+
   GetCouple(){
     try{
       const id = +this.route.snapshot.paramMap.get('id');
@@ -73,35 +103,79 @@ export class CoupleDetailComponent implements OnInit {
     return this.coupleDetail.name;
   }
 
+  set CoupleName(value: string){
+    this.coupleDetail.name = value;
+  }
+
   get ParentLeft(){
     return this.coupleDetail.father;
+  }
+
+  set ParentLeft(value: string){
+    this.coupleDetail.father = value;
   }
 
   get ParentRight(){
     return this.coupleDetail.mother;
   }
 
+  set ParentRight(value: string){
+    this.coupleDetail.mother = value;
+  }
+
   get ChildLeft1(){
     return this.coupleDetail.child1;
+  }
+
+  set ChildLeft1(value: string){
+    this.coupleDetail.child1 = value;
   }
 
   get ChildLeft2(){
     return this.coupleDetail.child2;
   }
 
+  set ChildLeft2(value: string){
+    this.coupleDetail.child2 = value;
+  }
+
   get ChildLeft3(){
     return this.coupleDetail.child3;
+  }
+
+  set ChildLeft3(value: string){
+    this.coupleDetail.child3 = value;
   }
 
   get ChildLeft4(){
     return this.coupleDetail.child4;
   }
 
+  set ChildLeft4(value: string){
+    this.coupleDetail.child4 = value;
+  }
+
   get ChildLeft5(){
     return this.coupleDetail.child5;
   }
 
+  set ChildLeft5(value: string){
+    this.coupleDetail.child5 = value;
+  }
+
   get ChildLeft6(){
     return this.coupleDetail.child6;
+  }
+
+  set ChildLeft6(value: string){
+    this.coupleDetail.child6 = value;
+  }
+
+  get Description(){
+    return this.coupleDetail.description;
+  }
+
+  set Description(value: string){
+    this.coupleDetail.description = value;
   }
 }

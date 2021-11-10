@@ -97,6 +97,10 @@ export class ApiService {
     return this._http.get<Couple>(`http://localhost:4000/api/v1/couples/${id}`);
   }
 
+  UpdateCouple(id: number, updateCouple: Couple) {
+    return this._http.patch<Couple>(`http://localhost:4000/api/v1/couples/${id}`, updateCouple);
+  }
+
   CreateCouple(newCouple: Couple) {
     return this._http.post<Couple>(`http://localhost:4000/api/v1/couples`, newCouple, {
       headers: new HttpHeaders({
@@ -164,4 +168,5 @@ export interface Couple{
   child4: string;
   child5: string;
   child6: string;
+  description: string;
 }

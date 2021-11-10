@@ -137,6 +137,10 @@ namespace BLL.Services
             {
                 couple.Child6 = body.Child6.ToString();
             }
+            if(body.Description != null)
+            {
+                couple.Description = body.Description.ToString();
+            }
 
             couple = await _repo.ChangeCouple(couple);
             CoupleVM viewmodel = _mapper.Map<CoupleVM>(couple);

@@ -24,6 +24,10 @@ namespace DAL.Repositories
         }
         public async Task<Couple> CreateCouple(Couple couple)
         {
+            if(couple.Description == null)
+            {
+                couple.Description = "";
+            }
             _context.Couples.Add(couple);
             await _context.SaveChangesAsync();
             Couple dbCouple = await _context.Couples.SingleOrDefaultAsync(x => x.ID == couple.ID);

@@ -70,3 +70,4 @@ C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\BirdAPI\bin\Debu
 C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\BirdAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\BirdAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\BirdAPI\obj\Debug\netcoreapp3.1\BirdAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\davin\OneDrive\Documenten\School\Website Gerry\BirdAPI\BirdAPI\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
